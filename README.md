@@ -83,6 +83,17 @@ cat examples/weekly_scan.md
 | `indicator_register.md` | Complete monitoring register |
 | `weekly_scan.md` | Sample horizon scan with 6 signals |
 
+### Templates (`templates/`)
+
+Blank templates with [FILL IN] placeholders and instructions for building your own scenarios:
+
+| Template | Purpose |
+|----------|---------|
+| `drivers_template.md` | Driver analysis form with STEEP+T categories |
+| `scenario_template.md` | Scenario narrative structure with quality checklist |
+| `indicator_template.md` | Indicator definition with source library |
+| `weekly_scan_template.md` | Horizon scan log with action tracking |
+
 ---
 
 ## The Methodology
@@ -239,11 +250,16 @@ foresight-scenarios-toolkit/
 │   ├── uncertainties.md    # Uncertainty selection
 │   ├── scenarios.md        # Four scenario narratives
 │   ├── indicators.md       # Indicator register
-│   ├── decisions.md        # Decision framework     ← NEW
-│   └── contingency.md      # Contingency playbooks  ← NEW
+│   ├── decisions.md        # Decision framework
+│   └── contingency.md      # Contingency playbooks
 ├── guides/
-│   ├── adaptation.md       # Domain adaptation      ← NEW
-│   └── facilitation.md     # Workshop guide         ← NEW
+│   ├── adaptation.md       # Domain adaptation
+│   └── facilitation.md     # Workshop guide
+├── templates/
+│   ├── drivers_template.md     # Blank driver analysis
+│   ├── scenario_template.md    # Blank scenario structure
+│   ├── indicator_template.md   # Blank indicator register
+│   └── weekly_scan_template.md # Blank scan log
 ├── scripts/
 │   ├── generate_matrix.py
 │   ├── generate_indicators.py
@@ -276,6 +292,12 @@ foresight-scenarios-toolkit/
 2. Configure indicators in `scripts/indicators_config.json`
 3. Run `python scripts/generate_indicators.py`
 4. Establish weekly scanning rhythm
+
+**Option D: Build from templates**
+1. Copy templates from `templates/` to your working directory
+2. Fill in [FILL IN] placeholders with your domain content
+3. Use hints and instructions embedded in each template
+4. Reference `framework/` examples for guidance
 
 ---
 

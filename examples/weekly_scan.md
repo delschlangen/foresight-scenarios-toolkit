@@ -8,14 +8,14 @@
 
 ## Signal Summary
 
-| # | Signal | Scenario Impact | Confidence |
-|---|--------|-----------------|------------|
-| 1 | Anthropic releases Claude with expanded agentic capabilities | Capability axis → Incremental+ | High |
-| 2 | EU AI Office announces first enforcement priorities | Patchwork Progress | High |
-| 3 | Bipartisan AI bill stalls in Senate | Patchwork Progress | High |
-| 4 | China announces new AI chip despite export controls | Fragmented Scramble | Medium |
-| 5 | Major AI lab quietly disbands red team | Emergency Coordination | Medium |
-| 6 | OECD releases AI governance interoperability framework | Coordinated Caution | Medium |
+| # | Signal | Source Type | Scenario Impact | Confidence | Action Required |
+|---|--------|-------------|-----------------|------------|-----------------|
+| 1 | Anthropic releases Claude with expanded agentic capabilities | industry | Capability axis → Incremental+ | High | monitor |
+| 2 | EU AI Office announces first enforcement priorities | gov | Patchwork Progress | High | brief |
+| 3 | Bipartisan AI bill stalls in Senate | gov | Patchwork Progress | High | monitor |
+| 4 | China announces new AI chip despite export controls | media | Fragmented Scramble | Medium | monitor |
+| 5 | Major AI lab quietly disbands red team | media | Emergency Coordination | Medium | escalate |
+| 6 | OECD releases AI governance interoperability framework | gov | Coordinated Caution | Medium | monitor |
 
 ---
 
@@ -23,7 +23,8 @@
 
 ### Signal 1: Anthropic Agentic Release
 
-**Source:** Anthropic blog, tech press  
+**Source:** Anthropic blog, tech press
+**Source Type:** industry
 **Date:** December 18, 2024
 
 **What happened:** Anthropic released expanded "computer use" capabilities allowing Claude to autonomously navigate computers, use tools, and execute multi-step tasks.
@@ -37,11 +38,14 @@
 
 **Confidence:** High — Direct observation
 
+**Action Required:** monitor
+
 ---
 
 ### Signal 2: EU AI Office Enforcement Priorities
 
-**Source:** European Commission announcement  
+**Source:** European Commission announcement
+**Source Type:** gov
 **Date:** December 19, 2024
 
 **What happened:** EU AI Office published enforcement priorities for 2025, focusing on high-risk AI systems in employment and credit scoring. First fines expected Q2 2025.
@@ -55,11 +59,14 @@
 
 **Confidence:** High — Official government source
 
+**Action Required:** brief
+
 ---
 
 ### Signal 3: US AI Bill Stalls
 
-**Source:** Congressional reporting, Politico  
+**Source:** Congressional reporting, Politico
+**Source Type:** gov
 **Date:** December 20, 2024
 
 **What happened:** Bipartisan AI governance bill failed to advance to floor vote before recess. Sponsors cite lack of consensus on liability provisions and preemption.
@@ -73,11 +80,14 @@
 
 **Confidence:** High — Direct legislative tracking
 
+**Action Required:** monitor
+
 ---
 
 ### Signal 4: Chinese AI Chip Progress
 
-**Source:** South China Morning Post, semiconductor analysts  
+**Source:** South China Morning Post, semiconductor analysts
+**Source Type:** media
 **Date:** December 17, 2024
 
 **What happened:** Huawei subsidiary reportedly began volume production of AI training chip approaching 80% of NVIDIA H100 performance despite export controls.
@@ -91,11 +101,14 @@
 
 **Confidence:** Medium — Unverified performance claims
 
+**Action Required:** monitor
+
 ---
 
 ### Signal 5: Lab Red Team Disbanded
 
-**Source:** Internal sources via tech journalist  
+**Source:** Internal sources via tech journalist
+**Source Type:** media
 **Date:** December 19, 2024
 
 **What happened:** One of the top-4 frontier labs reportedly dissolved its internal red team / adversarial testing function, reassigning staff to product teams.
@@ -109,13 +122,14 @@
 
 **Confidence:** Medium — Single source, not officially confirmed
 
-**Action:** Monitor for confirmation; flag for escalation if confirmed
+**Action Required:** escalate — Monitor for confirmation; flag for escalation if confirmed
 
 ---
 
 ### Signal 6: OECD Interoperability Framework
 
-**Source:** OECD.AI  
+**Source:** OECD.AI
+**Source Type:** gov
 **Date:** December 21, 2024
 
 **What happened:** OECD released draft framework for mutual recognition of AI governance requirements across member countries, proposing common baseline for high-risk systems.
@@ -127,6 +141,8 @@
 - Relevant to indicators: I-03 (international governance meetings)
 
 **Confidence:** Medium — Draft framework, adoption uncertain
+
+**Action Required:** monitor
 
 ---
 
