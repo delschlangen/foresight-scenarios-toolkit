@@ -1,0 +1,35 @@
+{
+  "title": "AI Governance Futures (2024-2030)",
+  "axis_x": {
+    "name": "AI Capability Trajectory",
+    "left": "Incremental",
+    "right": "Discontinuous"
+  },
+  "axis_y": {
+    "name": "Global Regulatory Coherence",
+    "top": "Harmonized",
+    "bottom": "Fragmented"
+  },
+  "scenarios": {
+    "top_left": {
+      "name": "Coordinated Caution",
+      "tagline": "Global guardrails before the leap",
+      "probability": 20
+    },
+    "top_right": {
+      "name": "Emergency Coordination",
+      "tagline": "Crisis forces cooperation",
+      "probability": 15
+    },
+    "bottom_left": {
+      "name": "Patchwork Progress",
+      "tagline": "Steady advance, messy governance",
+      "probability": 45
+    },
+    "bottom_right": {
+      "name": "Fragmented Scramble",
+      "tagline": "Transformative AI, unprepared world",
+      "probability": 20
+    }
+  }
+}

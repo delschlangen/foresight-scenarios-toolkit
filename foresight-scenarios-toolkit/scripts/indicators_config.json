@@ -1,0 +1,127 @@
+{
+  "title": "AI Governance Indicator Register",
+  "updated": "2025-12-25",
+  "indicators": [
+    {
+      "id": "I-01",
+      "signal": "Frontier model capability announcements",
+      "source": "Lab blogs, arXiv, press releases",
+      "scenarios": [
+        "All"
+      ],
+      "type": "Leading",
+      "frequency": "Weekly",
+      "confidence": "High",
+      "threshold": "Capability significantly exceeds scaling extrapolation"
+    },
+    {
+      "id": "I-02",
+      "signal": "AI safety researcher departures/statements",
+      "source": "Social media, press, Congressional testimony",
+      "scenarios": [
+        "Emergency Coordination"
+      ],
+      "type": "Leading",
+      "frequency": "Weekly",
+      "confidence": "Medium",
+      "threshold": "Multiple senior departures citing safety concerns"
+    },
+    {
+      "id": "I-03",
+      "signal": "International AI governance meetings",
+      "source": "Government announcements, UN, OECD",
+      "scenarios": [
+        "Coordinated Caution"
+      ],
+      "type": "Leading",
+      "frequency": "Monthly",
+      "confidence": "High",
+      "threshold": "Binding multilateral agreement announced"
+    },
+    {
+      "id": "I-04",
+      "signal": "US federal AI legislation progress",
+      "source": "Congress.gov, press coverage",
+      "scenarios": [
+        "Coordinated Caution"
+      ],
+      "type": "Confirming",
+      "frequency": "Monthly",
+      "confidence": "High",
+      "threshold": "Comprehensive bill passes committee or floor"
+    },
+    {
+      "id": "I-05",
+      "signal": "EU AI Act enforcement actions",
+      "source": "EU Commission, national regulators",
+      "scenarios": [
+        "Patchwork Progress"
+      ],
+      "type": "Confirming",
+      "frequency": "Monthly",
+      "confidence": "High",
+      "threshold": "First major fine or compliance order"
+    },
+    {
+      "id": "I-06",
+      "signal": "Major AI incident reports",
+      "source": "Press, incident databases, regulatory filings",
+      "scenarios": [
+        "Emergency Coordination",
+        "Fragmented Scramble"
+      ],
+      "type": "Confirming",
+      "frequency": "Continuous",
+      "confidence": "High",
+      "threshold": "Incident causing significant harm or near-miss"
+    },
+    {
+      "id": "I-07",
+      "signal": "Compute governance proposals",
+      "source": "Executive orders, legislation, international agreements",
+      "scenarios": [
+        "Emergency Coordination"
+      ],
+      "type": "Leading",
+      "frequency": "Monthly",
+      "confidence": "High",
+      "threshold": "Mandatory compute reporting or licensing proposed"
+    },
+    {
+      "id": "I-08",
+      "signal": "AI labor displacement data",
+      "source": "BLS, company announcements, industry surveys",
+      "scenarios": [
+        "All"
+      ],
+      "type": "Lagging",
+      "frequency": "Quarterly",
+      "confidence": "Medium",
+      "threshold": "Displacement rate exceeds historical automation trends"
+    },
+    {
+      "id": "I-09",
+      "signal": "Export control escalations",
+      "source": "Commerce Dept, press, trade policy analysis",
+      "scenarios": [
+        "Fragmented Scramble"
+      ],
+      "type": "Confirming",
+      "frequency": "Monthly",
+      "confidence": "High",
+      "threshold": "Major new restrictions or retaliatory measures"
+    },
+    {
+      "id": "I-10",
+      "signal": "AI safety research funding",
+      "source": "Grant announcements, budget documents",
+      "scenarios": [
+        "Coordinated Caution"
+      ],
+      "type": "Leading",
+      "frequency": "Quarterly",
+      "confidence": "High",
+      "threshold": ">50% YoY increase in government/philanthropic funding"
+    }
+  ]
+}

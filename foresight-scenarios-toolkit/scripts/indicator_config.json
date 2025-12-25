@@ -1,0 +1,152 @@
+{
+  "title": "AI Governance Futures",
+  "period": "Q4 2024",
+  "scenarios": [
+    "Coordinated Caution",
+    "Governed Acceleration",
+    "Patchwork Paralysis",
+    "Racing Blind"
+  ],
+  "categories": [
+    {
+      "name": "Regulatory Trajectory",
+      "description": "Signals indicating harmonization vs. fragmentation",
+      "indicators": [
+        {
+          "id": "R-01",
+          "name": "US federal AI legislation progress",
+          "scenario": "Coordinated Caution",
+          "status": "Monitoring",
+          "triggered": false,
+          "confidence": "-"
+        },
+        {
+          "id": "R-02",
+          "name": "EU-US AI agreement announced",
+          "scenario": "Governed Acceleration",
+          "status": "Monitoring",
+          "triggered": false,
+          "confidence": "-"
+        },
+        {
+          "id": "R-03",
+          "name": "State AI bills exceed 10 conflicting laws",
+          "scenario": "Patchwork Paralysis",
+          "status": "Active",
+          "triggered": true,
+          "confidence": "Medium"
+        },
+        {
+          "id": "R-04",
+          "name": "Company announces market exit due to compliance",
+          "scenario": "Patchwork Paralysis",
+          "status": "Monitoring",
+          "triggered": false,
+          "confidence": "-"
+        }
+      ]
+    },
+    {
+      "name": "Agentic AI Deployment",
+      "description": "Signals indicating cautious vs. rapid deployment",
+      "indicators": [
+        {
+          "id": "A-01",
+          "name": "Fortune 500 deploys autonomous customer AI",
+          "scenario": "Racing Blind",
+          "status": "Active",
+          "triggered": true,
+          "confidence": "Medium"
+        },
+        {
+          "id": "A-02",
+          "name": "Major agentic AI incident reported",
+          "scenario": "Coordinated Caution",
+          "status": "Monitoring",
+          "triggered": false,
+          "confidence": "-"
+        },
+        {
+          "id": "A-03",
+          "name": "AI safety standard required by major buyer",
+          "scenario": "Governed Acceleration",
+          "status": "Monitoring",
+          "triggered": false,
+          "confidence": "-"
+        },
+        {
+          "id": "A-04",
+          "name": "Enterprise human-in-loop still standard",
+          "scenario": "Coordinated Caution",
+          "status": "Active",
+          "triggered": true,
+          "confidence": "High"
+        }
+      ]
+    },
+    {
+      "name": "Market Signals",
+      "description": "Business and investment indicators",
+      "indicators": [
+        {
+          "id": "M-01",
+          "name": "AI governance job postings increase >50%",
+          "scenario": "Coordinated Caution",
+          "status": "Active",
+          "triggered": true,
+          "confidence": "High"
+        },
+        {
+          "id": "M-02",
+          "name": "AI liability insurance market emerges",
+          "scenario": "Governed Acceleration",
+          "status": "Monitoring",
+          "triggered": false,
+          "confidence": "-"
+        },
+        {
+          "id": "M-03",
+          "name": "Agentic AI startup funding >$10B annually",
+          "scenario": "Racing Blind",
+          "status": "Active",
+          "triggered": true,
+          "confidence": "Medium"
+        }
+      ]
+    }
+  ],
+  "watch_list": [
+    {
+      "indicator": "R-01",
+      "reason": "New Congress may act on AI; monitor committee activity"
+    },
+    {
+      "indicator": "A-02",
+      "reason": "Agentic deployments increasing; incident risk rising"
+    },
+    {
+      "indicator": "M-02",
+      "reason": "Insurance market would be strong governance enabler"
+    }
+  ],
+  "recent_signals": [
+    {
+      "date": "2024-12-15",
+      "signal": "EU AI Act enforcement begins",
+      "indicator": "R-02",
+      "assessment": "Supports harmonization path in EU; US response unclear"
+    },
+    {
+      "date": "2024-12-10",
+      "signal": "Major tech company launches coding agent",
+      "indicator": "A-01",
+      "assessment": "Agentic deployment accelerating in enterprise dev tools"
+    },
+    {
+      "date": "2024-12-05",
+      "signal": "California AI bill signed",
+      "indicator": "R-03",
+      "assessment": "State fragmentation continuing; federal action pressure"
+    }
+  ]
+}

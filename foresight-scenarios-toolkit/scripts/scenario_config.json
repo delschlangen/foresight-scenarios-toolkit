@@ -1,0 +1,89 @@
+{
+  "title": "AI Governance Futures",
+  "axis1": {
+    "name": "Regulatory Trajectory",
+    "pole_a": "Harmonization",
+    "pole_b": "Fragmentation"
+  },
+  "axis2": {
+    "name": "Agentic AI Deployment",
+    "pole_a": "Cautious",
+    "pole_b": "Rapid"
+  },
+  "scenarios": {
+    "q1": {
+      "id": "S1",
+      "name": "Coordinated Caution",
+      "description": "Global regulatory convergence combined with slow, careful AI deployment. Governance keeps pace with capability.",
+      "implications": [
+        "Invest in compliance infrastructure",
+        "Build for auditability",
+        "Long development cycles acceptable"
+      ],
+      "comparison": {
+        "speed": "Slow",
+        "clarity": "High",
+        "risk": "Low"
+      }
+    },
+    "q2": {
+      "id": "S2",
+      "name": "Governed Acceleration",
+      "description": "Harmonized rules AND rapid deployment. Governance scales with adoption through streamlined compliance.",
+      "implications": [
+        "Speed AND governance both matter",
+        "Invest in automated compliance",
+        "Build regulator relationships"
+      ],
+      "comparison": {
+        "speed": "Fast",
+        "clarity": "High",
+        "risk": "Medium"
+      }
+    },
+    "q3": {
+      "id": "S3",
+      "name": "Patchwork Paralysis",
+      "description": "Regulatory fragmentation creates compliance complexity. Combined with caution, deployment stalls.",
+      "implications": [
+        "Geographic strategy matters",
+        "High compliance costs",
+        "Maintain optionality"
+      ],
+      "comparison": {
+        "speed": "Slow",
+        "clarity": "Low",
+        "risk": "Low"
+      }
+    },
+    "q4": {
+      "id": "S4",
+      "name": "Racing Blind",
+      "description": "Rapid deployment despite regulatory confusion. High innovation, high risk. Backlash likely.",
+      "implications": [
+        "Build 'compliance ready'",
+        "Monitor for backlash triggers",
+        "High reputational risk"
+      ],
+      "comparison": {
+        "speed": "Fast",
+        "clarity": "Low",
+        "risk": "High"
+      }
+    }
+  },
+  "comparison_dimensions": [
+    {
+      "key": "speed",
+      "name": "Deployment Speed"
+    },
+    {
+      "key": "clarity",
+      "name": "Regulatory Clarity"
+    },
+    {
+      "key": "risk",
+      "name": "Incident Risk"
+    }
+  ]
+}
