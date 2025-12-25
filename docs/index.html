@@ -1,0 +1,935 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Governance Futures | Foresight Scenarios Toolkit</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-content">
+            <div class="logo">
+                <span class="logo-icon">&#9670;</span>
+                <span class="logo-text">Foresight Scenarios Toolkit</span>
+            </div>
+            <nav class="nav">
+                <a href="https://github.com/delschlangen/foresight-scenarios-toolkit" target="_blank" class="github-link">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                    </svg>
+                    View on GitHub
+                </a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>AI Governance Futures</h1>
+            <p class="hero-subtitle">Strategic scenarios for 2024-2030</p>
+            <p class="hero-description">Four plausible futures exploring the intersection of AI capability trajectories and global regulatory coherence.</p>
+        </div>
+    </section>
+
+    <!-- Navigation Tabs -->
+    <div class="tabs-container">
+        <div class="tabs">
+            <button class="tab active" data-tab="matrix">Scenario Matrix</button>
+            <button class="tab" data-tab="drivers">Drivers</button>
+            <button class="tab" data-tab="indicators">Indicators</button>
+            <button class="tab" data-tab="methodology">Methodology</button>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <main class="main-content">
+
+        <!-- Matrix Tab -->
+        <section id="matrix" class="tab-content active">
+            <div class="matrix-section">
+                <div class="matrix-container">
+                    <!-- Y-axis label -->
+                    <div class="axis-label y-axis">
+                        <span class="axis-high">Harmonized</span>
+                        <span class="axis-name">Global Regulation</span>
+                        <span class="axis-low">Fragmented</span>
+                    </div>
+
+                    <!-- Matrix Grid -->
+                    <div class="matrix-grid">
+                        <!-- Quadrant 1: Top-Left -->
+                        <div class="quadrant q1" data-scenario="coordinated-caution">
+                            <div class="quadrant-content">
+                                <span class="quadrant-number">1</span>
+                                <h3>Coordinated Caution</h3>
+                                <p class="quadrant-tagline">"The world agrees before the horse leaves the barn"</p>
+                                <div class="probability">
+                                    <span class="prob-label">Probability</span>
+                                    <span class="prob-value">20%</span>
+                                </div>
+                            </div>
+                            <div class="quadrant-hover">Click to explore</div>
+                        </div>
+
+                        <!-- Quadrant 2: Top-Right -->
+                        <div class="quadrant q2" data-scenario="emergency-coordination">
+                            <div class="quadrant-content">
+                                <span class="quadrant-number">2</span>
+                                <h3>Emergency Coordination</h3>
+                                <p class="quadrant-tagline">"A crisis forces cooperation that seemed impossible"</p>
+                                <div class="probability">
+                                    <span class="prob-label">Probability</span>
+                                    <span class="prob-value">15%</span>
+                                </div>
+                            </div>
+                            <div class="quadrant-hover">Click to explore</div>
+                        </div>
+
+                        <!-- Quadrant 3: Bottom-Left -->
+                        <div class="quadrant q3" data-scenario="patchwork-progress">
+                            <div class="quadrant-content">
+                                <span class="quadrant-number">3</span>
+                                <h3>Patchwork Progress</h3>
+                                <p class="quadrant-tagline">"AI advances steadily while governance remains a mess"</p>
+                                <div class="probability">
+                                    <span class="prob-label">Probability</span>
+                                    <span class="prob-value highlight">45%</span>
+                                </div>
+                            </div>
+                            <div class="quadrant-hover">Click to explore</div>
+                        </div>
+
+                        <!-- Quadrant 4: Bottom-Right -->
+                        <div class="quadrant q4" data-scenario="fragmented-scramble">
+                            <div class="quadrant-content">
+                                <span class="quadrant-number">4</span>
+                                <h3>Fragmented Scramble</h3>
+                                <p class="quadrant-tagline">"Transformative AI in a world unprepared to govern it"</p>
+                                <div class="probability">
+                                    <span class="prob-label">Probability</span>
+                                    <span class="prob-value">20%</span>
+                                </div>
+                            </div>
+                            <div class="quadrant-hover">Click to explore</div>
+                        </div>
+                    </div>
+
+                    <!-- X-axis label -->
+                    <div class="axis-label x-axis">
+                        <span class="axis-low">Incremental</span>
+                        <span class="axis-name">AI Capability</span>
+                        <span class="axis-high">Discontinuous</span>
+                    </div>
+                </div>
+
+                <!-- Probability Summary -->
+                <div class="probability-summary">
+                    <h4>Current Assessment (Q4 2024)</h4>
+                    <div class="prob-bars">
+                        <div class="prob-bar">
+                            <span class="bar-label">Coordinated Caution</span>
+                            <div class="bar-container">
+                                <div class="bar-fill q1-fill" style="width: 20%"></div>
+                            </div>
+                            <span class="bar-value">20%</span>
+                        </div>
+                        <div class="prob-bar">
+                            <span class="bar-label">Emergency Coordination</span>
+                            <div class="bar-container">
+                                <div class="bar-fill q2-fill" style="width: 15%"></div>
+                            </div>
+                            <span class="bar-value">15%</span>
+                        </div>
+                        <div class="prob-bar">
+                            <span class="bar-label">Patchwork Progress</span>
+                            <div class="bar-container">
+                                <div class="bar-fill q3-fill" style="width: 45%"></div>
+                            </div>
+                            <span class="bar-value">45%</span>
+                        </div>
+                        <div class="prob-bar">
+                            <span class="bar-label">Fragmented Scramble</span>
+                            <div class="bar-container">
+                                <div class="bar-fill q4-fill" style="width: 20%"></div>
+                            </div>
+                            <span class="bar-value">20%</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Drivers Tab -->
+        <section id="drivers" class="tab-content">
+            <div class="drivers-section">
+                <h2>Driver Analysis</h2>
+                <p class="section-intro">12 forces shaping the AI governance landscape, analyzed by impact and uncertainty.</p>
+
+                <div class="drivers-grid">
+                    <!-- Technological Drivers -->
+                    <div class="driver-category">
+                        <h3><span class="category-icon">T</span> Technological</h3>
+                        <div class="driver-cards">
+                            <div class="driver-card">
+                                <div class="driver-id">T1</div>
+                                <h4>Frontier Model Capability</h4>
+                                <p>Rate of improvement in frontier AI capabilities (reasoning, agency, multimodality)</p>
+                                <div class="driver-metrics">
+                                    <div class="metric">
+                                        <span class="metric-label">Impact</span>
+                                        <div class="dots">
+                                            <span class="dot filled"></span>
+                                            <span class="dot filled"></span>
+                                            <span class="dot filled"></span>
+                                            <span class="dot filled"></span>
+                                            <span class="dot filled"></span>
+                                        </div>
+                                    </div>
+                                    <div class="metric">
+                                        <span class="metric-label">Uncertainty</span>
+                                        <div class="dots">
+                                            <span class="dot filled"></span>
+                                            <span class="dot filled"></span>
+                                            <span class="dot filled"></span>
+                                            <span class="dot filled"></span>
+                                            <span class="dot"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <span class="driver-priority critical">Critical</span>
+                            </div>
+                            <div class="driver-card">
+                                <div class="driver-id">T2</div>
+                                <h4>Agentic AI Deployment</h4>
+                                <p>Proliferation of AI systems that take autonomous actions</p>
+                                <div class="driver-metrics">
+                                    <div class="metric">
+                                        <span class="metric-label">Impact</span>
+                                        <div class="dots">
+                                            <span class="dot filled"></span>
+                                            <span class="dot filled"></span>
+                                            <span class="dot filled"></span>
+                                            <span class="dot filled"></span>
+                                            <span class="dot filled"></span>
+                                        </div>
+                                    </div>
+                                    <div class="metric">
+                                        <span class="metric-label">Uncertainty</span>
+                                        <div class="dots">
+                                            <span class="dot filled"></span>
+                                            <span class="dot filled"></span>
+                                            <span class="dot filled"></span>
+                                            <span class="dot"></span>
+                                            <span class="dot"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <span class="driver-priority critical">Critical</span>
+                            </div>
+                            <div class="driver-card">
+                                <div class="driver-id">T3</div>
+                                <h4>Compute Concentration</h4>
+                                <p>Geographic and corporate concentration of AI training compute</p>
+                                <div class="driver-metrics">
+                                    <div class="metric">
+                                        <span class="metric-label">Impact</span>
+                                        <div class="dots">
+                                            <span class="dot filled"></span>
+                                            <span class="dot filled"></span>
+                                            <span class="dot filled"></span>
+                                            <span class="dot filled"></span>
+                                            <span class="dot"></span>
+                                        </div>
+                                    </div>
+                                    <div class="metric">
+                                        <span class="metric-label">Uncertainty</span>
+                                        <div class="dots">
+                                            <span class="dot filled"></span>
+                                            <span class="dot filled"></span>
+                                            <span class="dot filled"></span>
+                                            <span class="dot filled"></span>
+                                            <span class="dot"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <span class="driver-priority high">High</span>
+                            </div>
+                            <div class="driver-card">
+                                <div class="driver-id">T4</div>
+                                <h4>Open-Source Proliferation</h4>
+                                <p>Availability of capable open-weight models (Llama, Mistral, etc.)</p>
+                                <div class="driver-metrics">
+                                    <div class="metric">
+                                        <span class="metric-label">Impact</span>
+                                        <div class="dots">
+                                            <span class="dot filled"></span>
+                                            <span class="dot filled"></span>
+                                            <span class="dot filled"></span>
+                                            <span class="dot filled"></span>
+                                            <span class="dot"></span>
+                                        </div>
+                                    </div>
+                                    <div class="metric">
+                                        <span class="metric-label">Uncertainty</span>
+                                        <div class="dots">
+                                            <span class="dot filled"></span>
+                                            <span class="dot filled"></span>
+                                            <span class="dot filled"></span>
+                                            <span class="dot"></span>
+                                            <span class="dot"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <span class="driver-priority high">High</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Political Drivers -->
+                    <div class="driver-category">
+                        <h3><span class="category-icon">P</span> Political</h3>
+                        <div class="driver-cards">
+                            <div class="driver-card">
+                                <div class="driver-id">P1</div>
+                                <h4>US Federal AI Regulatory Posture</h4>
+                                <p>Whether US pursues binding AI regulation vs. voluntary frameworks</p>
+                                <div class="driver-metrics">
+                                    <div class="metric">
+                                        <span class="metric-label">Impact</span>
+                                        <div class="dots">
+                                            <span class="dot filled"></span>
+                                            <span class="dot filled"></span>
+                                            <span class="dot filled"></span>
+                                            <span class="dot filled"></span>
+                                            <span class="dot filled"></span>
+                                        </div>
+                                    </div>
+                                    <div class="metric">
+                                        <span class="metric-label">Uncertainty</span>
+                                        <div class="dots">
+                                            <span class="dot filled"></span>
+                                            <span class="dot filled"></span>
+                                            <span class="dot filled"></span>
+                                            <span class="dot filled"></span>
+                                            <span class="dot filled"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <span class="driver-priority critical">Critical</span>
+                            </div>
+                            <div class="driver-card">
+                                <div class="driver-id">P2</div>
+                                <h4>EU AI Act Implementation</h4>
+                                <p>How strictly EU AI Act is interpreted and enforced</p>
+                                <div class="driver-metrics">
+                                    <div class="metric">
+                                        <span class="metric-label">Impact</span>
+                                        <div class="dots">
+                                            <span class="dot filled"></span>
+                                            <span class="dot filled"></span>
+                                            <span class="dot filled"></span>
+                                            <span class="dot filled"></span>
+                                            <span class="dot"></span>
+                                        </div>
+                                    </div>
+                                    <div class="metric">
+                                        <span class="metric-label">Uncertainty</span>
+                                        <div class="dots">
+                                            <span class="dot filled"></span>
+                                            <span class="dot filled"></span>
+                                            <span class="dot filled"></span>
+                                            <span class="dot"></span>
+                                            <span class="dot"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <span class="driver-priority high">High</span>
+                            </div>
+                            <div class="driver-card">
+                                <div class="driver-id">P3</div>
+                                <h4>US-China AI Competition</h4>
+                                <p>Intensity of strategic competition in AI capabilities and governance</p>
+                                <div class="driver-metrics">
+                                    <div class="metric">
+                                        <span class="metric-label">Impact</span>
+                                        <div class="dots">
+                                            <span class="dot filled"></span>
+                                            <span class="dot filled"></span>
+                                            <span class="dot filled"></span>
+                                            <span class="dot filled"></span>
+                                            <span class="dot filled"></span>
+                                        </div>
+                                    </div>
+                                    <div class="metric">
+                                        <span class="metric-label">Uncertainty</span>
+                                        <div class="dots">
+                                            <span class="dot filled"></span>
+                                            <span class="dot filled"></span>
+                                            <span class="dot filled"></span>
+                                            <span class="dot"></span>
+                                            <span class="dot"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <span class="driver-priority high">High</span>
+                            </div>
+                            <div class="driver-card">
+                                <div class="driver-id">P4</div>
+                                <h4>International Governance Coordination</h4>
+                                <p>Whether international AI governance frameworks emerge (UN, G7, bilateral)</p>
+                                <div class="driver-metrics">
+                                    <div class="metric">
+                                        <span class="metric-label">Impact</span>
+                                        <div class="dots">
+                                            <span class="dot filled"></span>
+                                            <span class="dot filled"></span>
+                                            <span class="dot filled"></span>
+                                            <span class="dot"></span>
+                                            <span class="dot"></span>
+                                        </div>
+                                    </div>
+                                    <div class="metric">
+                                        <span class="metric-label">Uncertainty</span>
+                                        <div class="dots">
+                                            <span class="dot filled"></span>
+                                            <span class="dot filled"></span>
+                                            <span class="dot filled"></span>
+                                            <span class="dot filled"></span>
+                                            <span class="dot filled"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <span class="driver-priority monitor">Monitor</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Economic Drivers -->
+                    <div class="driver-category">
+                        <h3><span class="category-icon">E</span> Economic</h3>
+                        <div class="driver-cards">
+                            <div class="driver-card">
+                                <div class="driver-id">E1</div>
+                                <h4>AI Investment Levels</h4>
+                                <p>Capital flowing into AI development and deployment</p>
+                                <div class="driver-metrics">
+                                    <div class="metric">
+                                        <span class="metric-label">Impact</span>
+                                        <div class="dots">
+                                            <span class="dot filled"></span>
+                                            <span class="dot filled"></span>
+                                            <span class="dot filled"></span>
+                                            <span class="dot filled"></span>
+                                            <span class="dot"></span>
+                                        </div>
+                                    </div>
+                                    <div class="metric">
+                                        <span class="metric-label">Uncertainty</span>
+                                        <div class="dots">
+                                            <span class="dot filled"></span>
+                                            <span class="dot filled"></span>
+                                            <span class="dot filled"></span>
+                                            <span class="dot"></span>
+                                            <span class="dot"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <span class="driver-priority high">High</span>
+                            </div>
+                            <div class="driver-card">
+                                <div class="driver-id">E2</div>
+                                <h4>Automation-Driven Labor Displacement</h4>
+                                <p>Rate and scope of job displacement from AI automation</p>
+                                <div class="driver-metrics">
+                                    <div class="metric">
+                                        <span class="metric-label">Impact</span>
+                                        <div class="dots">
+                                            <span class="dot filled"></span>
+                                            <span class="dot filled"></span>
+                                            <span class="dot filled"></span>
+                                            <span class="dot filled"></span>
+                                            <span class="dot filled"></span>
+                                        </div>
+                                    </div>
+                                    <div class="metric">
+                                        <span class="metric-label">Uncertainty</span>
+                                        <div class="dots">
+                                            <span class="dot filled"></span>
+                                            <span class="dot filled"></span>
+                                            <span class="dot filled"></span>
+                                            <span class="dot filled"></span>
+                                            <span class="dot"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <span class="driver-priority critical">Critical</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Social Drivers -->
+                    <div class="driver-category">
+                        <h3><span class="category-icon">S</span> Social</h3>
+                        <div class="driver-cards">
+                            <div class="driver-card">
+                                <div class="driver-id">S1</div>
+                                <h4>Public Trust in AI</h4>
+                                <p>General population attitudes toward AI safety and benefits</p>
+                                <div class="driver-metrics">
+                                    <div class="metric">
+                                        <span class="metric-label">Impact</span>
+                                        <div class="dots">
+                                            <span class="dot filled"></span>
+                                            <span class="dot filled"></span>
+                                            <span class="dot filled"></span>
+                                            <span class="dot"></span>
+                                            <span class="dot"></span>
+                                        </div>
+                                    </div>
+                                    <div class="metric">
+                                        <span class="metric-label">Uncertainty</span>
+                                        <div class="dots">
+                                            <span class="dot filled"></span>
+                                            <span class="dot filled"></span>
+                                            <span class="dot filled"></span>
+                                            <span class="dot filled"></span>
+                                            <span class="dot"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <span class="driver-priority monitor">Monitor</span>
+                            </div>
+                            <div class="driver-card">
+                                <div class="driver-id">S2</div>
+                                <h4>AI Safety Research Community</h4>
+                                <p>Influence of AI safety researchers on lab priorities and governance</p>
+                                <div class="driver-metrics">
+                                    <div class="metric">
+                                        <span class="metric-label">Impact</span>
+                                        <div class="dots">
+                                            <span class="dot filled"></span>
+                                            <span class="dot filled"></span>
+                                            <span class="dot filled"></span>
+                                            <span class="dot filled"></span>
+                                            <span class="dot"></span>
+                                        </div>
+                                    </div>
+                                    <div class="metric">
+                                        <span class="metric-label">Uncertainty</span>
+                                        <div class="dots">
+                                            <span class="dot filled"></span>
+                                            <span class="dot filled"></span>
+                                            <span class="dot filled"></span>
+                                            <span class="dot filled"></span>
+                                            <span class="dot"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <span class="driver-priority high">High</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Critical Uncertainties -->
+                <div class="critical-uncertainties">
+                    <h3>Selected Critical Uncertainties</h3>
+                    <p>The two highest-impact, highest-uncertainty drivers form the scenario axes:</p>
+                    <div class="uncertainty-cards">
+                        <div class="uncertainty-card">
+                            <span class="axis-badge x-axis-badge">X-Axis</span>
+                            <h4>AI Capability Trajectory</h4>
+                            <div class="spectrum">
+                                <span>Incremental</span>
+                                <div class="spectrum-bar"></div>
+                                <span>Discontinuous</span>
+                            </div>
+                        </div>
+                        <div class="uncertainty-card">
+                            <span class="axis-badge y-axis-badge">Y-Axis</span>
+                            <h4>Global Regulatory Coherence</h4>
+                            <div class="spectrum">
+                                <span>Fragmented</span>
+                                <div class="spectrum-bar"></div>
+                                <span>Harmonized</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Indicators Tab -->
+        <section id="indicators" class="tab-content">
+            <div class="indicators-section">
+                <h2>Indicator Register</h2>
+                <p class="section-intro">10 early warning signals to detect which scenario is emerging.</p>
+
+                <!-- Probability Dashboard -->
+                <div class="probability-dashboard">
+                    <h3>Scenario Probability Tracker</h3>
+                    <div class="scenario-probs">
+                        <div class="scenario-prob q1-bg">
+                            <span class="scenario-name">Coordinated Caution</span>
+                            <span class="scenario-percent">20%</span>
+                            <span class="scenario-trend">—</span>
+                        </div>
+                        <div class="scenario-prob q2-bg">
+                            <span class="scenario-name">Emergency Coordination</span>
+                            <span class="scenario-percent">15%</span>
+                            <span class="scenario-trend">—</span>
+                        </div>
+                        <div class="scenario-prob q3-bg highlight-prob">
+                            <span class="scenario-name">Patchwork Progress</span>
+                            <span class="scenario-percent">45%</span>
+                            <span class="scenario-trend most-likely">Most Likely</span>
+                        </div>
+                        <div class="scenario-prob q4-bg">
+                            <span class="scenario-name">Fragmented Scramble</span>
+                            <span class="scenario-percent">20%</span>
+                            <span class="scenario-trend">—</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Indicators Table -->
+                <div class="indicators-table-container">
+                    <table class="indicators-table">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Signal</th>
+                                <th>Primary Scenario</th>
+                                <th>Type</th>
+                                <th>Threshold</th>
+                                <th>Frequency</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><span class="indicator-id">I-01</span></td>
+                                <td>
+                                    <strong>Frontier Lab Capability Announcements</strong>
+                                    <p class="indicator-desc">Major capability releases from frontier labs (OpenAI, Anthropic, Google DeepMind, Meta)</p>
+                                </td>
+                                <td><span class="scenario-tag all">All (capability axis)</span></td>
+                                <td><span class="type-tag leading">Leading</span></td>
+                                <td>Capability significantly exceeds extrapolated scaling</td>
+                                <td>Weekly</td>
+                            </tr>
+                            <tr>
+                                <td><span class="indicator-id">I-02</span></td>
+                                <td>
+                                    <strong>AI Safety Researcher Signals</strong>
+                                    <p class="indicator-desc">Departures, public statements, or whistleblowing from AI safety researchers</p>
+                                </td>
+                                <td><span class="scenario-tag q2">Emergency Coordination</span></td>
+                                <td><span class="type-tag leading">Leading</span></td>
+                                <td>Multiple senior departures with safety rationale</td>
+                                <td>Weekly</td>
+                            </tr>
+                            <tr>
+                                <td><span class="indicator-id">I-03</span></td>
+                                <td>
+                                    <strong>International AI Governance Meetings</strong>
+                                    <p class="indicator-desc">High-level international meetings, summits, or treaty negotiations</p>
+                                </td>
+                                <td><span class="scenario-tag q1">Coordinated Caution</span></td>
+                                <td><span class="type-tag leading">Leading</span></td>
+                                <td>Binding multilateral agreement signed</td>
+                                <td>Monthly</td>
+                            </tr>
+                            <tr>
+                                <td><span class="indicator-id">I-04</span></td>
+                                <td>
+                                    <strong>US Federal AI Legislation</strong>
+                                    <p class="indicator-desc">Progress of comprehensive federal AI legislation through Congress</p>
+                                </td>
+                                <td><span class="scenario-tag q1">Coordinated Caution</span></td>
+                                <td><span class="type-tag confirming">Confirming</span></td>
+                                <td>Comprehensive bill passage</td>
+                                <td>Monthly</td>
+                            </tr>
+                            <tr>
+                                <td><span class="indicator-id">I-05</span></td>
+                                <td>
+                                    <strong>EU AI Act Enforcement</strong>
+                                    <p class="indicator-desc">Enforcement actions, fines, or compliance mandates under EU AI Act</p>
+                                </td>
+                                <td><span class="scenario-tag q3">Patchwork Progress</span></td>
+                                <td><span class="type-tag confirming">Confirming</span></td>
+                                <td>Major fines + compliance response</td>
+                                <td>Monthly</td>
+                            </tr>
+                            <tr>
+                                <td><span class="indicator-id">I-06</span></td>
+                                <td>
+                                    <strong>Major AI Incident Reports</strong>
+                                    <p class="indicator-desc">Significant AI system failures, harms, or near-misses</p>
+                                </td>
+                                <td><span class="scenario-tag emergency">Emergency scenarios</span></td>
+                                <td><span class="type-tag confirming">Confirming</span></td>
+                                <td>Catastrophic incident occurs</td>
+                                <td>Continuous</td>
+                            </tr>
+                            <tr>
+                                <td><span class="indicator-id">I-07</span></td>
+                                <td>
+                                    <strong>Compute Governance Proposals</strong>
+                                    <p class="indicator-desc">Government proposals to regulate AI training compute</p>
+                                </td>
+                                <td><span class="scenario-tag q2">Emergency Coordination</span></td>
+                                <td><span class="type-tag leading">Leading</span></td>
+                                <td>Coordinated international compute controls</td>
+                                <td>Monthly</td>
+                            </tr>
+                            <tr>
+                                <td><span class="indicator-id">I-08</span></td>
+                                <td>
+                                    <strong>AI Labor Displacement Data</strong>
+                                    <p class="indicator-desc">Employment statistics in AI-affected sectors</p>
+                                </td>
+                                <td><span class="scenario-tag all">All</span></td>
+                                <td><span class="type-tag lagging">Lagging</span></td>
+                                <td>Rapid displacement rate</td>
+                                <td>Quarterly</td>
+                            </tr>
+                            <tr>
+                                <td><span class="indicator-id">I-09</span></td>
+                                <td>
+                                    <strong>Export Control Escalations</strong>
+                                    <p class="indicator-desc">New US export controls on AI chips, models, or talent</p>
+                                </td>
+                                <td><span class="scenario-tag q4">Fragmented Scramble</span></td>
+                                <td><span class="type-tag confirming">Confirming</span></td>
+                                <td>Broad escalation + retaliation</td>
+                                <td>Monthly</td>
+                            </tr>
+                            <tr>
+                                <td><span class="indicator-id">I-10</span></td>
+                                <td>
+                                    <strong>AI Safety Research Funding</strong>
+                                    <p class="indicator-desc">Government and philanthropic funding for AI safety research</p>
+                                </td>
+                                <td><span class="scenario-tag q1">Coordinated Caution</span></td>
+                                <td><span class="type-tag leading">Leading</span></td>
+                                <td>Major funding increase (>50%)</td>
+                                <td>Quarterly</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Monitoring Schedule -->
+                <div class="monitoring-schedule">
+                    <h3>Monitoring Schedule</h3>
+                    <div class="schedule-grid">
+                        <div class="schedule-item">
+                            <span class="schedule-freq">Weekly</span>
+                            <span class="schedule-indicators">I-01, I-02</span>
+                            <span class="schedule-action">Quick scan; log notable items</span>
+                        </div>
+                        <div class="schedule-item">
+                            <span class="schedule-freq">Monthly</span>
+                            <span class="schedule-indicators">I-03, I-04, I-05, I-07, I-09</span>
+                            <span class="schedule-action">Review trends; update assessment</span>
+                        </div>
+                        <div class="schedule-item">
+                            <span class="schedule-freq">Quarterly</span>
+                            <span class="schedule-indicators">I-06, I-08, I-10</span>
+                            <span class="schedule-action">Deep review; revise probabilities</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Methodology Tab -->
+        <section id="methodology" class="tab-content">
+            <div class="methodology-section">
+                <h2>Foresight Methodology</h2>
+                <p class="section-intro">A structured approach to strategic foresight, adapted from Shell's scenario planning methodology.</p>
+
+                <!-- Process Flow -->
+                <div class="process-flow">
+                    <div class="process-step">
+                        <div class="step-number">1</div>
+                        <div class="step-content">
+                            <h4>Identify Drivers</h4>
+                            <p>Map 10-15 forces shaping the future using STEEP+T framework</p>
+                            <ul>
+                                <li>Social, Technological, Economic</li>
+                                <li>Environmental, Political, Threat</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="process-arrow">&#8594;</div>
+                    <div class="process-step">
+                        <div class="step-number">2</div>
+                        <div class="step-content">
+                            <h4>Select Uncertainties</h4>
+                            <p>Choose 2 critical uncertainties as scenario axes</p>
+                            <ul>
+                                <li>High impact on focal question</li>
+                                <li>High uncertainty</li>
+                                <li>Independent of each other</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="process-arrow">&#8594;</div>
+                    <div class="process-step">
+                        <div class="step-number">3</div>
+                        <div class="step-content">
+                            <h4>Build Scenarios</h4>
+                            <p>Develop 4 narratives for each quadrant</p>
+                            <ul>
+                                <li>Plausible, not predictions</li>
+                                <li>Internally consistent</li>
+                                <li>Meaningfully different</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="process-arrow">&#8594;</div>
+                    <div class="process-step">
+                        <div class="step-number">4</div>
+                        <div class="step-content">
+                            <h4>Define Indicators</h4>
+                            <p>Create early warning system</p>
+                            <ul>
+                                <li>Leading indicators</li>
+                                <li>Confirming indicators</li>
+                                <li>Lagging indicators</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="process-arrow">&#8594;</div>
+                    <div class="process-step">
+                        <div class="step-number">5</div>
+                        <div class="step-content">
+                            <h4>Operationalize</h4>
+                            <p>Connect to decisions</p>
+                            <ul>
+                                <li>Weekly horizon scans</li>
+                                <li>Quarterly reviews</li>
+                                <li>Strategy stress-tests</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Key Principles -->
+                <div class="principles">
+                    <h3>Key Principles</h3>
+                    <div class="principles-grid">
+                        <div class="principle">
+                            <span class="principle-icon">&#10003;</span>
+                            <h4>Plausible</h4>
+                            <p>Scenarios could actually happen given current trends and dynamics</p>
+                        </div>
+                        <div class="principle">
+                            <span class="principle-icon">&#10003;</span>
+                            <h4>Differentiated</h4>
+                            <p>Each scenario represents a meaningfully different world</p>
+                        </div>
+                        <div class="principle">
+                            <span class="principle-icon">&#10003;</span>
+                            <h4>Challenging</h4>
+                            <p>Scenarios force new thinking and stress-test assumptions</p>
+                        </div>
+                        <div class="principle">
+                            <span class="principle-icon">&#10003;</span>
+                            <h4>Decision-relevant</h4>
+                            <p>Scenarios connect directly to strategic choices</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Common Pitfalls -->
+                <div class="pitfalls">
+                    <h3>Avoid These Pitfalls</h3>
+                    <div class="pitfalls-list">
+                        <div class="pitfall">
+                            <span class="pitfall-icon">&#10007;</span>
+                            <p><strong>"Good future vs. Bad future"</strong> — Not insightful; each scenario should have winners and losers</p>
+                        </div>
+                        <div class="pitfall">
+                            <span class="pitfall-icon">&#10007;</span>
+                            <p><strong>Predictions</strong> — Scenarios are possibilities, not forecasts</p>
+                        </div>
+                        <div class="pitfall">
+                            <span class="pitfall-icon">&#10007;</span>
+                            <p><strong>Science fiction</strong> — Plausibility matters; ground scenarios in reality</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- References -->
+                <div class="references">
+                    <h3>References</h3>
+                    <ul>
+                        <li>Schwartz, P. (1991). <em>The Art of the Long View</em></li>
+                        <li>Shell Scenarios Team. <em>Scenarios: An Explorer's Guide</em></li>
+                        <li>Wilkinson, A. & Kupers, R. (2014). <em>The Essence of Scenarios</em></li>
+                        <li>IFTF. <em>Foresight Toolkit</em></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Scenario Modal -->
+    <div id="scenario-modal" class="modal">
+        <div class="modal-content">
+            <button class="modal-close">&times;</button>
+            <div class="modal-header">
+                <span class="modal-quadrant"></span>
+                <h2 class="modal-title"></h2>
+                <p class="modal-tagline"></p>
+            </div>
+            <div class="modal-body">
+                <div class="modal-section">
+                    <h3>Narrative</h3>
+                    <p class="modal-narrative"></p>
+                </div>
+                <div class="modal-section">
+                    <h3>Key Features</h3>
+                    <ul class="modal-features"></ul>
+                </div>
+                <div class="modal-section">
+                    <h3>Winners & Losers</h3>
+                    <div class="winners-losers">
+                        <div class="winners">
+                            <h4>Winners</h4>
+                            <ul class="modal-winners"></ul>
+                        </div>
+                        <div class="losers">
+                            <h4>Losers</h4>
+                            <ul class="modal-losers"></ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-section">
+                    <h3>Strategic Implications</h3>
+                    <ul class="modal-implications"></ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <p>Foresight Scenarios Toolkit &mdash; Built by <a href="https://linkedin.com/in/del-s-759557175/" target="_blank">Del Schlangen</a></p>
+            <p><a href="https://github.com/delschlangen/foresight-scenarios-toolkit" target="_blank">View on GitHub</a> &middot; MIT License</p>
+        </div>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>
