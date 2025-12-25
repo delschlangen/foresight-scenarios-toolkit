@@ -2,6 +2,10 @@
 
 **A complete system for turning strategic uncertainty into better decisions.**
 
+[![Try It Live](https://img.shields.io/badge/Try%20It%20Live-Visit%20Site-blue?style=for-the-badge)](https://delschlangen.github.io/foresight-scenarios-toolkit)
+
+> **🚀 [Use this tool live →](https://delschlangen.github.io/foresight-scenarios-toolkit)** — No installation required. Try it in your browser.
+
 This isn't just another scenario planning guide. It's an operational toolkit that takes you from "we should think about the future" to "here's what we're doing about it."
 
 ---
@@ -298,6 +302,14 @@ foresight-scenarios-toolkit/
 2. Fill in [FILL IN] placeholders with your domain content
 3. Use hints and instructions embedded in each template
 4. Reference `framework/` examples for guidance
+
+---
+
+## Live Demo
+
+Use this tool directly in your browser: **https://delschlangen.github.io/foresight-scenarios-toolkit**
+
+No installation or dependencies required.
 
 ---
 
