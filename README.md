@@ -1,12 +1,14 @@
 # Foresight Scenarios Toolkit
 
-**A complete system for turning strategic uncertainty into better decisions.**
+**Strategic foresight methodology for scenario planning, uncertainty analysis, and decision-making under ambiguity.**
 
 [![Try It Live](https://img.shields.io/badge/Try%20It%20Live-Visit%20Site-blue?style=for-the-badge)](https://delschlangen.github.io/foresight-scenarios-toolkit)
+[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg?style=for-the-badge)](LICENSE)
+[![Cite This](https://img.shields.io/badge/Cite-CITATION.cff-orange?style=for-the-badge)](CITATION.cff)
 
 > **🚀 [Use this tool live →](https://delschlangen.github.io/foresight-scenarios-toolkit)** — No installation required. Try it in your browser.
 
-This isn't just another scenario planning guide. It's an operational toolkit that takes you from "we should think about the future" to "here's what we're doing about it."
+A complete **scenario planning toolkit** for strategists, risk managers, and foresight practitioners. Build 2x2 scenario matrices, track leading indicators, stress-test strategies against multiple futures, and translate uncertainty into actionable decisions. Based on Shell's proven foresight methodology.
 
 ---
 
@@ -322,10 +324,27 @@ No installation or dependencies required.
 
 ---
 
-## License
+## Citation
 
-MIT License — See [LICENSE](LICENSE)
+If you use this toolkit in your research or work, please cite it:
+
+```bibtex
+@software{schlangen2024foresight,
+  author = {Schlangen, Del},
+  title = {Foresight Scenarios Toolkit},
+  year = {2024},
+  url = {https://github.com/delschlangen/foresight-scenarios-toolkit}
+}
+```
+
+See [CITATION.cff](CITATION.cff) for full citation metadata.
 
 ---
 
-*Built by Del Schlangen | [LinkedIn](https://linkedin.com/in/del-s-759557175/)*
+## License
+
+This project is licensed under the **MIT License** — you are free to use, modify, and distribute this toolkit for any purpose. See [LICENSE](LICENSE) for details.
+
+---
+
+*Built by [Del Schlangen](https://linkedin.com/in/del-s-759557175/) · [ORCID](https://orcid.org/0009-0005-5116-9564)*
