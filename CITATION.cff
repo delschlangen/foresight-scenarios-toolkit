@@ -1,0 +1,29 @@
+cff-version: 1.2.0
+message: "If you use this toolkit, please cite it as below."
+title: "Foresight Scenarios Toolkit"
+abstract: >-
+  A complete strategic foresight methodology for scenario planning,
+  uncertainty analysis, and decision-making under ambiguity. Includes
+  driver analysis, 2x2 scenario matrices, indicator tracking, contingency
+  playbooks, and workshop facilitation guides.
+type: software
+authors:
+  - family-names: Schlangen
+    given-names: Del
+    orcid: "https://orcid.org/0009-0005-5116-9564"
+repository-code: "https://github.com/delschlangen/foresight-scenarios-toolkit"
+url: "https://delschlangen.github.io/foresight-scenarios-toolkit"
+license: MIT
+keywords:
+  - scenario planning
+  - strategic foresight
+  - futures thinking
+  - uncertainty analysis
+  - decision making
+  - risk management
+  - horizon scanning
+  - AI governance
+  - strategy
+  - contingency planning
+version: "1.0.0"
+date-released: "2024-01-01"
