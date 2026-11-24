@@ -1,9 +1,12 @@
 /**
  * Foresight Scenarios Toolkit - Interactive Application
- * Handles tab navigation, matrix interactions, and scenario modals
+ * Tabs (ARIA pattern, deep-linkable), accessible scenario modal, scroll animations.
  */
 
-// Scenario Data
+// ---------------------------------------------------------------------------
+// Scenario data (mirrors framework/scenarios.md)
+// ---------------------------------------------------------------------------
+
 const scenarios = {
     'coordinated-caution': {
         quadrant: 'Incremental Capability + Harmonized Regulation',
@@ -143,123 +146,202 @@ The result is a dangerous period of rapid capability deployment with minimal gua
     }
 };
 
-// DOM Elements
-const tabs = document.querySelectorAll('.tab');
-const tabContents = document.querySelectorAll('.tab-content');
-const quadrants = document.querySelectorAll('.quadrant');
-const modal = document.getElementById('scenario-modal');
-const modalClose = document.querySelector('.modal-close');
+// ---------------------------------------------------------------------------
+// Tabs: WAI-ARIA tabs pattern with hash deep-linking
+// ---------------------------------------------------------------------------
 
-// Tab Navigation
+const tabs = Array.from(document.querySelectorAll('.tab[data-tab]'));
+const tabPanels = Array.from(document.querySelectorAll('.tab-content'));
+const tabIds = tabs.map(tab => tab.dataset.tab);
+const tabsContainer = document.querySelector('.tabs-container');
+
+function activateTab(id, options = {}) {
+    const { updateHash = true, scroll = false } = options;
+    if (!tabIds.includes(id)) return false;
+
+    tabs.forEach(tab => {
+        const active = tab.dataset.tab === id;
+        tab.classList.toggle('active', active);
+        tab.setAttribute('aria-selected', String(active));
+        tab.setAttribute('tabindex', active ? '0' : '-1');
+    });
+    tabPanels.forEach(panel => panel.classList.toggle('active', panel.id === id));
+
+    if (updateHash && location.hash !== '#' + id) {
+        history.replaceState(null, '', '#' + id);
+    }
+    if (scroll && tabsContainer) {
+        tabsContainer.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+    return true;
+}
+
 tabs.forEach(tab => {
-    tab.addEventListener('click', () => {
-        // Remove active class from all tabs and contents
-        tabs.forEach(t => t.classList.remove('active'));
-        tabContents.forEach(c => c.classList.remove('active'));
+    tab.addEventListener('click', () => activateTab(tab.dataset.tab));
 
-        // Add active class to clicked tab and corresponding content
-        tab.classList.add('active');
-        const tabId = tab.getAttribute('data-tab');
-        document.getElementById(tabId).classList.add('active');
+    tab.addEventListener('keydown', event => {
+        const index = tabs.indexOf(tab);
+        let next = null;
+        if (event.key === 'ArrowRight') next = tabs[(index + 1) % tabs.length];
+        if (event.key === 'ArrowLeft') next = tabs[(index - 1 + tabs.length) % tabs.length];
+        if (event.key === 'Home') next = tabs[0];
+        if (event.key === 'End') next = tabs[tabs.length - 1];
+        if (next) {
+            event.preventDefault();
+            activateTab(next.dataset.tab);
+            next.focus();
+        }
     });
 });
 
-// Quadrant Click - Open Modal
-quadrants.forEach(quadrant => {
-    quadrant.addEventListener('click', () => {
-        const scenarioId = quadrant.getAttribute('data-scenario');
-        openModal(scenarioId);
+function tabFromHash() {
+    return decodeURIComponent(location.hash.replace(/^#/, ''));
+}
+
+if (!activateTab(tabFromHash(), { updateHash: false })) {
+    activateTab(tabIds[0], { updateHash: false });
+}
+
+window.addEventListener('hashchange', () => {
+    activateTab(tabFromHash(), { updateHash: false });
+});
+
+// In-page links: a link to a tab id switches tabs; any other anchor scrolls smoothly.
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', event => {
+        const id = anchor.getAttribute('href').slice(1);
+        if (tabIds.includes(id)) {
+            event.preventDefault();
+            activateTab(id, { scroll: true });
+            return;
+        }
+        const target = document.getElementById(id);
+        if (target) {
+            event.preventDefault();
+            target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
     });
 });
 
-// Modal Functions
+// ---------------------------------------------------------------------------
+// Scenario modal: dialog semantics, focus trap, focus restore
+// ---------------------------------------------------------------------------
+
+const modal = document.getElementById('scenario-modal');
+const modalContent = modal.querySelector('.modal-content');
+const modalClose = modal.querySelector('.modal-close');
+const quadrants = document.querySelectorAll('.quadrant');
+const FOCUSABLE = 'a[href], button:not([disabled]), input:not([disabled]), select:not([disabled]), textarea:not([disabled]), [tabindex]:not([tabindex="-1"])';
+let modalOpener = null;
+
+function escapeHtml(text) {
+    return text
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;');
+}
+
 function openModal(scenarioId) {
     const scenario = scenarios[scenarioId];
     if (!scenario) return;
 
-    // Populate modal content
     const quadrantBadge = modal.querySelector('.modal-quadrant');
     quadrantBadge.textContent = scenario.quadrant;
     quadrantBadge.className = `modal-quadrant ${scenario.quadrantClass}-bg`;
 
     modal.querySelector('.modal-title').textContent = scenario.title;
     modal.querySelector('.modal-tagline').textContent = scenario.tagline;
-    modal.querySelector('.modal-narrative').innerHTML = scenario.narrative.replace(/\n\n/g, '</p><p>');
+    modal.querySelector('.modal-narrative').innerHTML = scenario.narrative
+        .split(/\n\s*\n/)
+        .map(paragraph => `<p>${escapeHtml(paragraph)}</p>`)
+        .join('');
 
-    // Features
-    const featuresList = modal.querySelector('.modal-features');
-    featuresList.innerHTML = scenario.features.map(f => `<li>${f}</li>`).join('');
+    modal.querySelector('.modal-features').innerHTML = scenario.features.map(f => `<li>${escapeHtml(f)}</li>`).join('');
+    modal.querySelector('.modal-winners').innerHTML = scenario.winners.map(w => `<li>${escapeHtml(w)}</li>`).join('');
+    modal.querySelector('.modal-losers').innerHTML = scenario.losers.map(l => `<li>${escapeHtml(l)}</li>`).join('');
+    modal.querySelector('.modal-implications').innerHTML = scenario.implications.map(i => `<li>${i}</li>`).join('');
 
-    // Winners
-    const winnersList = modal.querySelector('.modal-winners');
-    winnersList.innerHTML = scenario.winners.map(w => `<li>${w}</li>`).join('');
-
-    // Losers
-    const losersList = modal.querySelector('.modal-losers');
-    losersList.innerHTML = scenario.losers.map(l => `<li>${l}</li>`).join('');
-
-    // Implications
-    const implList = modal.querySelector('.modal-implications');
-    implList.innerHTML = scenario.implications.map(i => `<li>${i}</li>`).join('');
-
-    // Show modal
+    modalOpener = document.activeElement;
     modal.classList.add('active');
+    modal.setAttribute('aria-hidden', 'false');
     document.body.style.overflow = 'hidden';
+    modalContent.scrollTop = 0;
+    modalClose.focus();
 }
 
 function closeModal() {
     modal.classList.remove('active');
+    modal.setAttribute('aria-hidden', 'true');
     document.body.style.overflow = '';
+    if (modalOpener && typeof modalOpener.focus === 'function') {
+        modalOpener.focus();
+    }
+    modalOpener = null;
 }
 
-// Modal Close Events
 modalClose.addEventListener('click', closeModal);
 
-modal.addEventListener('click', (e) => {
-    if (e.target === modal) {
+modal.addEventListener('click', event => {
+    if (event.target === modal) closeModal();
+});
+
+document.addEventListener('keydown', event => {
+    if (!modal.classList.contains('active')) return;
+
+    if (event.key === 'Escape') {
         closeModal();
+        return;
+    }
+
+    if (event.key === 'Tab') {
+        const focusable = Array.from(modalContent.querySelectorAll(FOCUSABLE))
+            .filter(element => element.offsetParent !== null);
+        if (focusable.length === 0) {
+            event.preventDefault();
+            return;
+        }
+        const first = focusable[0];
+        const last = focusable[focusable.length - 1];
+        if (event.shiftKey && document.activeElement === first) {
+            event.preventDefault();
+            last.focus();
+        } else if (!event.shiftKey && document.activeElement === last) {
+            event.preventDefault();
+            first.focus();
+        }
     }
 });
 
-document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && modal.classList.contains('active')) {
-        closeModal();
-    }
-});
+// Quadrants: clickable, keyboard-operable buttons that open the dialog
+quadrants.forEach(quadrant => {
+    const name = quadrant.querySelector('h3').textContent;
+    quadrant.setAttribute('tabindex', '0');
+    quadrant.setAttribute('role', 'button');
+    quadrant.setAttribute('aria-haspopup', 'dialog');
+    quadrant.setAttribute('aria-label', `View ${name} scenario details`);
 
-// Smooth scroll for any anchor links
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function(e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-            target.scrollIntoView({
-                behavior: 'smooth',
-                block: 'start'
-            });
+    quadrant.addEventListener('click', () => openModal(quadrant.dataset.scenario));
+    quadrant.addEventListener('keydown', event => {
+        if (event.key === 'Enter' || event.key === ' ') {
+            event.preventDefault();
+            openModal(quadrant.dataset.scenario);
         }
     });
 });
 
-// Add subtle animation to probability bars on scroll
+// ---------------------------------------------------------------------------
+// Scroll animations
+// ---------------------------------------------------------------------------
+
 function animateProbBars() {
-    const bars = document.querySelectorAll('.bar-fill');
-    bars.forEach(bar => {
+    document.querySelectorAll('.bar-fill').forEach(bar => {
         const width = bar.style.width;
         bar.style.width = '0';
-        setTimeout(() => {
-            bar.style.width = width;
-        }, 100);
+        setTimeout(() => { bar.style.width = width; }, 100);
     });
 }
 
-// Intersection Observer for animations
-const observerOptions = {
-    threshold: 0.2,
-    rootMargin: '0px'
-};
-
-const observer = new IntersectionObserver((entries) => {
+const observer = new IntersectionObserver(entries => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
             entry.target.classList.add('visible');
@@ -268,29 +350,13 @@ const observer = new IntersectionObserver((entries) => {
             }
         }
     });
-}, observerOptions);
+}, { threshold: 0.2, rootMargin: '0px' });
 
-// Observe elements for scroll animations
-document.querySelectorAll('.probability-summary, .driver-card, .process-step').forEach(el => {
-    observer.observe(el);
+document.querySelectorAll('.probability-summary, .driver-card, .process-step, .toolkit-card').forEach(element => {
+    observer.observe(element);
 });
 
-// Add keyboard navigation for quadrants
-quadrants.forEach((quadrant, index) => {
-    quadrant.setAttribute('tabindex', '0');
-    quadrant.setAttribute('role', 'button');
-    quadrant.setAttribute('aria-label', `View ${quadrant.querySelector('h3').textContent} scenario`);
-
-    quadrant.addEventListener('keydown', (e) => {
-        if (e.key === 'Enter' || e.key === ' ') {
-            e.preventDefault();
-            const scenarioId = quadrant.getAttribute('data-scenario');
-            openModal(scenarioId);
-        }
-    });
-});
-
-// Console welcome message
+// ---------------------------------------------------------------------------
 console.log('%cForesight Scenarios Toolkit', 'font-size: 20px; font-weight: bold; color: #1a365d;');
-console.log('%cInteractive AI Governance Scenarios 2024-2030', 'font-size: 14px; color: #4a5568;');
-console.log('Learn more: https://github.com/delschlangen/foresight-scenarios-toolkit');
+console.log('%cWorked example: AI governance scenarios (Q4 2024 baseline)', 'font-size: 14px; color: #4a5568;');
+console.log('Build your own: https://github.com/delschlangen/foresight-scenarios-toolkit');

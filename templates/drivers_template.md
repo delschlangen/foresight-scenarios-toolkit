@@ -222,7 +222,13 @@ AXIS QUALITY CHECK:
 - [ ] Framed as spectrum, not binary
 -->
 
-These form the axes for scenario development. See `scenarios.md`.
+These form the axes for scenario development.
+
+---
+
+## Next Step
+
+Take the two uncertainties above into `templates/scenario_template.md` and name the four quadrants. For a worked version of this form, see `framework/drivers.md`; for the full sequence with time boxes, see `guides/runbook.md`.
 
 ---
 

@@ -1,22 +1,36 @@
 # Foresight Methodology
 
-A structured approach to strategic foresight for emerging technology risk, adapted from Shell's scenario planning methodology and tailored for AI/technology horizon scanning.
+A structured approach to strategic foresight, adapted from Shell's scenario planning methodology. The worked example in this folder applies it to AI governance; `guides/adaptation.md` shows how to apply it to any domain.
 
 ---
 
 ## Overview
 
-This toolkit implements a four-stage foresight process:
+This toolkit implements a five-stage foresight process. The first four build the scenarios; the fifth turns them into decisions, which is where most scenario work fails.
 
 ```
-┌─────────────┐    ┌─────────────┐    ┌─────────────┐    ┌─────────────┐
-│   DRIVERS   │ →  │UNCERTAINTIES│ →  │  SCENARIOS  │ →  │ INDICATORS  │
-│             │    │             │    │             │    │             │
-│ What forces │    │ Which are   │    │ What worlds │    │ What signals│
-│ shape the   │    │ critical &  │    │ could       │    │ tell us     │
-│ future?     │    │ uncertain?  │    │ emerge?     │    │ which way?  │
-└─────────────┘    └─────────────┘    └─────────────┘    └─────────────┘
+┌─────────────┐   ┌─────────────┐   ┌─────────────┐   ┌─────────────┐   ┌─────────────┐
+│   DRIVERS   │ → │UNCERTAINTIES│ → │  SCENARIOS  │ → │ INDICATORS  │ → │  DECISIONS  │
+│             │   │             │   │             │   │             │   │             │
+│ What forces │   │ Which are   │   │ What worlds │   │ What signals│   │ What do we  │
+│ shape the   │   │ critical &  │   │ could       │   │ tell us     │   │ do about    │
+│ future?     │   │ uncertain?  │   │ emerge?     │   │ which way?  │   │ it?         │
+└─────────────┘   └─────────────┘   └─────────────┘   └─────────────┘   └─────────────┘
 ```
+
+Want the whole thing in one sitting? `guides/runbook.md` walks every stage with time boxes, templates and the exact commands.
+
+---
+
+## Before You Start: The Focal Question
+
+Every stage is judged against one question. Write it down before you list a single driver.
+
+> **For [organization/role], what strategy should we pursue regarding [decision area] over [time horizon], given uncertainty about [key factors]?**
+
+A good focal question is specific, strategic, actionable and time-bounded. "What will happen with AI?" is none of those. "How should a mid-size SaaS company position its AI roadmap for 2025-2030 given uncertainty about capability pace and regulation?" is all four. See `guides/adaptation.md`, Step 1, for more examples.
+
+The example in this folder uses: *How will the global AI governance landscape evolve, and what are the implications for organizations developing or deploying AI systems?*
 
 ---
 
@@ -146,7 +160,23 @@ For each indicator:
 5. **Confidence:** How reliable is this signal?
 6. **Update frequency:** How often do we check?
 
-See `indicators.md` for a populated register.
+See `indicators.md` for a populated register. Write thresholds two analysts would agree have been crossed; `scripts/README.md` has guidance on making them measurable.
+
+---
+
+## Stage 5: Connect to Decisions
+
+**Goal:** Change what the organization actually does.
+
+Scenarios that stay in a slide deck have failed, however elegant. This stage has three moves, each with its own document:
+
+| Move | Question it answers | Where |
+|------|---------------------|-------|
+| **Stress-test** | Does our current strategy survive all four worlds? | `decisions.md` |
+| **Find robust moves** | What makes sense whichever world arrives? | `decisions.md`, `examples/strategic_options.md` |
+| **Pre-build contingencies** | If a scenario becomes likely, what do we do on day 1? | `contingency.md` |
+
+Then set **decision triggers**: probability thresholds and indicator events that commit you in advance to a review or an action. Deciding the trigger before the signal arrives is what stops the organization from rationalising inaction later.
 
 ---
 
@@ -162,7 +192,11 @@ Regular scanning keeps scenarios alive:
 4. Flag items for escalation
 5. Update indicator register
 
-See `examples/weekly_scan.md` for a template.
+See `templates/weekly_scan_template.md` for the blank form and `examples/weekly_scan.md` for a completed one.
+
+### Monthly Probability Update
+
+Weekly scans log evidence; the monthly review moves the numbers. `probability_updates.md` gives a worksheet for translating fired indicators into probability shifts without false precision, and a log format so changes are auditable.
 
 ### Quarterly Scenario Review
 
@@ -200,3 +234,4 @@ Foresight outputs should feed:
 | Version | Date | Changes |
 |---------|------|---------|
 | 1.0 | 2024-12 | Initial release |
+| 1.2 | 2026-11 | Added focal question preamble and Stage 5 (Decisions) to match the rest of the toolkit |

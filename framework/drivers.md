@@ -154,7 +154,39 @@
 
 ---
 
+### Environmental Drivers
+
+#### En1: Energy and Data-Center Constraints
+
+| Attribute | Assessment |
+|-----------|------------|
+| **Description** | Availability and cost of electricity, water and grid capacity for AI training and inference |
+| **Current trend** | Data-center power demand rising sharply; grid-connection queues lengthening in key hubs |
+| **Direction** | Tightening constraints, partly offset by new generation and efficiency gains |
+| **Impact** | ⬤⬤⬤⬤○ High — can slow capability scaling and shift where frontier compute is built |
+| **Uncertainty** | ⬤⬤⬤○○ Medium — the trend is clear, the pace of relief is not |
+| **Time horizon** | 2025-2030 |
+
+---
+
+### Threat Drivers
+
+#### Th1: Malicious Use of Frontier Models
+
+| Attribute | Assessment |
+|-----------|------------|
+| **Description** | Use of capable models for cyberattack, fraud, influence operations or weapons-relevant knowledge |
+| **Current trend** | Reported misuse in fraud and influence operations; effectiveness of safeguards contested |
+| **Direction** | Expanding with capability gains and open-weight diffusion |
+| **Impact** | ⬤⬤⬤⬤⬤ Critical — a major misuse event is the most likely trigger for emergency governance |
+| **Uncertainty** | ⬤⬤⬤⬤○ High — depends on safeguards, diffusion and attacker adaptation |
+| **Time horizon** | Ongoing |
+
+---
+
 ## Driver Prioritization Matrix
+
+Fourteen drivers across all six STEEP+T categories. (The Environmental and Threat categories are thin here because the focal question is governance; in an energy or security focal question they would dominate.)
 
 | Driver | Impact (1-5) | Uncertainty (1-5) | Priority |
 |--------|--------------|-------------------|----------|
@@ -163,6 +195,7 @@
 | P1: US regulatory posture | 5 | 5 | **Critical** |
 | P3: US-China competition | 5 | 3 | **High** |
 | E2: Labor displacement | 5 | 4 | **Critical** |
+| Th1: Malicious use of frontier models | 5 | 4 | **Critical** |
 | P2: EU AI Act implementation | 4 | 3 | **High** |
 | T3: Compute concentration | 4 | 4 | **High** |
 | T4: Open-source proliferation | 4 | 3 | **High** |
@@ -170,6 +203,7 @@
 | E1: Investment levels | 4 | 3 | **High** |
 | S1: Public trust | 3 | 4 | **Monitor** |
 | S2: Safety community influence | 4 | 4 | **High** |
+| En1: Energy and data-center constraints | 4 | 3 | **High** |
 
 ---
 
@@ -179,5 +213,7 @@ Based on this analysis, the two highest-impact, highest-uncertainty drivers are:
 
 1. **AI Capability Trajectory:** Incremental improvement ↔ Discontinuous leap
 2. **Global Regulatory Coherence:** Fragmented national approaches ↔ Harmonized international framework
+
+Th1 (malicious use) scores as high as the capability axis but was not chosen as an axis: it is strongly correlated with capability (more capable models mean more capable misuse), so it would not create independent worlds. It appears instead inside the scenarios as a trigger, and in the indicator register as I-06.
 
 These form the axes for scenario development. See `uncertainties.md`.

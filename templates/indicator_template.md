@@ -55,14 +55,22 @@ Aim for: ~50% leading, ~30% confirming, ~20% lagging
 | **Threshold** | [FILL IN: What level/event triggers attention?] |
 | **Scenario linkage** | [FILL IN: Which scenario(s) does this support? How?] |
 | **Confidence** | [High/Medium/Low] — [FILL IN: Why this confidence level?] |
-| **Frequency** | [FILL IN: How often to check — Weekly/Monthly/Quarterly/Continuous] |
+| **Frequency** | [FILL IN: How often to check — Continuous/Weekly/Monthly/Quarterly] |
+| **Status** | [Watching/Elevated/Fired/Retired] |
+| **Last reviewed** | [FILL IN: Date] |
+| **Last fired** | [FILL IN: Date, or —] |
 
 <!--
 HINTS:
 - Signal: Be specific. Not "technology advances" but "Major capability release from top-5 labs"
 - Source: Name actual sources — publications, databases, feeds, organizations
-- Threshold: Quantify if possible. "Stock drops 20%", "3+ major announcements", "Legislation passes"
+- Threshold: Write it so two analysts would agree whether it has been crossed.
+  Prefer a count ("2+ senior departures in a quarter"), a comparison (">50% YoY"),
+  or a named event class ("binding agreement, not a declaration"). Avoid bare
+  "significant", "major" or "rapid".
 - Scenario linkage: Explain the logic — why does this signal support that scenario?
+- Status: Watching = baseline; Elevated = partial evidence; Fired = threshold crossed and
+  verified; Retired = no longer tracked. Update Last reviewed every time you check.
 -->
 
 ---
@@ -217,10 +225,28 @@ Update quarterly (or when major signals occur) based on indicator signals.
 
 <!--
 PROBABILITY UPDATE GUIDE:
-- Update when indicators cross thresholds
-- Document reasoning for each change
+- Update when indicators cross thresholds, using the worksheet in framework/probability_updates.md
+- Document reasoning for each change in templates/probability_log_template.md
 - Keep history of probability changes for pattern analysis
 -->
+
+---
+
+## Generate the Register
+
+Copy the indicators above into a JSON file modelled on `scripts/indicators_config.json` and render a register plus a spreadsheet-ready CSV:
+
+```bash
+python3 scripts/generate_indicators.py --config my_indicators.json --output my_register.md --csv my_register.csv
+```
+
+Schema and vocabulary: `scripts/README.md`.
+
+---
+
+## Next Step
+
+Start the weekly rhythm with `templates/weekly_scan_template.md`, and set decision triggers in `framework/decisions.md` so that a fired indicator leads to an action, not just a note.
 
 ---
 

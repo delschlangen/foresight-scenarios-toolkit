@@ -2,6 +2,8 @@
 
 Four scenarios exploring the intersection of AI capability trajectories and global regulatory coherence.
 
+> **Example status:** Written in Q4 2024 as the toolkit's worked example. The narratives look forward from that vantage point, so some of the dates they pivot on have since passed; that is expected, and it is exactly what the quarterly review in `probability_updates.md` exists to catch. Read this set for *how* a scenario set is constructed, then build your own with `templates/scenario_template.md`.
+
 ---
 
 ## Scenario Overview

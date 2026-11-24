@@ -1,5 +1,8 @@
 {
   "title": "AI Governance Futures (2024-2030)",
+  "focal_question": "How will the global AI governance landscape evolve, and what are the implications for organizations developing or deploying AI systems?",
+  "as_of": "Q4 2024 (example baseline; not refreshed since)",
+  "note": "This is the toolkit's worked example. Probabilities are a Q4 2024 starting point, not a current forecast. See framework/probability_updates.md for how to move them as indicators fire.",
   "axis_x": {
     "name": "AI Capability Trajectory",
     "left": "Incremental",

@@ -158,6 +158,56 @@ a:hover {
     margin: 0 auto;
 }
 
+.hero-kicker {
+    font-size: 0.8125rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    opacity: 0.8;
+    margin-bottom: 0.75rem;
+}
+
+.hero-actions {
+    display: flex;
+    gap: 0.75rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 1.5rem;
+}
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.625rem 1.25rem;
+    border-radius: var(--radius);
+    font-weight: 600;
+    font-size: 0.9375rem;
+    transition: background 0.2s, color 0.2s;
+}
+
+.btn:hover {
+    text-decoration: none;
+}
+
+.btn-primary {
+    background: var(--white);
+    color: var(--primary);
+}
+
+.btn-primary:hover {
+    background: var(--q1-light);
+}
+
+.btn-secondary {
+    background: transparent;
+    color: var(--white);
+    border: 1px solid rgba(255, 255, 255, 0.6);
+}
+
+.btn-secondary:hover {
+    background: rgba(255, 255, 255, 0.12);
+}
+
 /* Tabs */
 .tabs-container {
     background: var(--white);
@@ -196,6 +246,16 @@ a:hover {
 .tab.active {
     color: var(--primary);
     border-bottom-color: var(--accent);
+}
+
+.tab:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: -2px;
+}
+
+.tab-cta {
+    color: var(--accent);
+    font-weight: 600;
 }
 
 /* Main Content */
@@ -250,12 +310,16 @@ a:hover {
     letter-spacing: 0.05em;
 }
 
+/* In vertical-rl writing mode the flex main axis for "row" runs top-to-bottom.
+   The 180deg rotation flips it, so row-reverse puts the first child (the high
+   pole, "Harmonized") at the top next to quadrants 1 and 2. */
 .axis-label.y-axis {
-    flex-direction: column;
+    flex-direction: row-reverse;
+    justify-content: space-between;
     writing-mode: vertical-rl;
     text-orientation: mixed;
     transform: rotate(180deg);
-    gap: 1rem;
+    padding: 1rem 0;
 }
 
 .axis-label.x-axis {
@@ -369,8 +433,16 @@ a:hover {
     border-radius: 4px;
 }
 
-.quadrant:hover .quadrant-hover {
+.quadrant:hover .quadrant-hover,
+.quadrant:focus-visible .quadrant-hover {
     opacity: 1;
+}
+
+/* Touch devices have no hover: always show the affordance */
+@media (hover: none) {
+    .quadrant-hover {
+        opacity: 1;
+    }
 }
 
 /* Quadrant Colors */
@@ -411,6 +483,18 @@ a:hover {
     letter-spacing: 0.05em;
     margin-bottom: 1rem;
     text-align: center;
+}
+
+.prob-note {
+    margin-top: 1rem;
+    font-size: 0.8125rem;
+    color: var(--text-muted);
+    text-align: center;
+}
+
+.probability-dashboard .prob-note {
+    margin: 0 0 1rem;
+    text-align: left;
 }
 
 .prob-bars {
@@ -742,7 +826,8 @@ a:hover {
     background: var(--white);
     border-radius: var(--radius-lg);
     box-shadow: var(--shadow);
-    overflow: hidden;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
     margin-bottom: 2rem;
 }
 
@@ -1100,8 +1185,8 @@ a:hover {
     position: absolute;
     top: 1rem;
     right: 1rem;
-    width: 32px;
-    height: 32px;
+    width: 40px;
+    height: 40px;
     background: var(--bg);
     border: none;
     border-radius: 50%;
@@ -1249,6 +1334,141 @@ a:hover {
 }
 
 /* =========================================
+   USE THE TOOLKIT SECTION
+   ========================================= */
+
+.toolkit-start {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-left: 4px solid var(--accent);
+    border-radius: var(--radius-lg);
+    padding: 1.5rem 2rem;
+    box-shadow: var(--shadow);
+    margin-bottom: 1rem;
+}
+
+.toolkit-start-text {
+    flex: 1 1 320px;
+}
+
+.toolkit-start h3 {
+    margin-bottom: 0.25rem;
+}
+
+.toolkit-start p {
+    color: var(--text-light);
+    font-size: 0.9375rem;
+}
+
+.toolkit-start .btn-primary {
+    background: var(--primary);
+    color: var(--white);
+    white-space: nowrap;
+}
+
+.toolkit-start .btn-primary:hover {
+    background: var(--primary-light);
+}
+
+.toolkit-group-title {
+    font-size: 1.125rem;
+    margin: 2rem 0 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--border);
+}
+
+.toolkit-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 1rem;
+}
+
+.toolkit-card {
+    display: flex;
+    flex-direction: column;
+    gap: 0.375rem;
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 1.25rem;
+    box-shadow: var(--shadow-sm);
+    color: inherit;
+    transition: box-shadow 0.2s, transform 0.2s;
+}
+
+.toolkit-card:hover,
+.toolkit-card:focus-visible {
+    text-decoration: none;
+    box-shadow: var(--shadow);
+    transform: translateY(-2px);
+}
+
+.toolkit-card .card-kicker {
+    font-size: 0.6875rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--text-muted);
+}
+
+.toolkit-card h4 {
+    font-size: 1rem;
+}
+
+.toolkit-card p {
+    font-size: 0.8125rem;
+    color: var(--text-light);
+    flex: 1;
+}
+
+.toolkit-card .card-link {
+    font-size: 0.8125rem;
+    font-weight: 600;
+    color: var(--accent);
+}
+
+.quick-start {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 1.5rem;
+    box-shadow: var(--shadow-sm);
+}
+
+.quick-start p {
+    font-size: 0.9375rem;
+    color: var(--text-light);
+    margin-bottom: 0.75rem;
+}
+
+.quick-start p:last-child {
+    margin-bottom: 0;
+}
+
+.quick-start pre {
+    background: var(--secondary);
+    color: #e2e8f0;
+    padding: 1rem 1.25rem;
+    border-radius: var(--radius);
+    overflow-x: auto;
+    font-size: 0.8125rem;
+    line-height: 1.7;
+    margin-bottom: 0.75rem;
+}
+
+.quick-start code {
+    font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+}
+
+.modal-narrative p + p {
+    margin-top: 1rem;
+}
+
+/* =========================================
    RESPONSIVE
    ========================================= */
 
@@ -1267,7 +1487,7 @@ a:hover {
     }
 
     .quadrant-tagline {
-        display: none;
+        font-size: 0.75rem;
     }
 
     .process-flow {
@@ -1319,12 +1539,22 @@ a:hover {
     }
 
     .tabs {
-        padding: 0 1rem;
-        overflow-x: auto;
+        padding: 0 0.5rem;
+        flex-wrap: wrap;
+        justify-content: center;
     }
 
     .tab {
-        padding: 0.75rem 1rem;
+        padding: 0.625rem 0.75rem;
+        font-size: 0.875rem;
+        white-space: nowrap;
+    }
+
+    .toolkit-start {
+        padding: 1.25rem;
+    }
+
+    .indicator-id {
         white-space: nowrap;
     }
 

@@ -183,9 +183,10 @@ Based on this week's signals:
 
 <!--
 PROBABILITY GUIDANCE:
-- Only change probabilities when evidence warrants it
-- Small changes (1-2%) are fine for incremental signals
-- Document reasoning for any change >5%
+- The weekly scan LOGS evidence. Move probabilities at the monthly review unless an
+  indicator has verifiably fired, using the worksheet in framework/probability_updates.md.
+- Small changes (1-2 points) are fine for incremental signals
+- Document reasoning for any change >5 points in templates/probability_log_template.md
 - Probabilities must sum to 100%
 -->
 

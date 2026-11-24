@@ -145,7 +145,7 @@ This playbook activates when:
 | Trigger Type | Condition | Verification |
 |--------------|-----------|--------------|
 | Probability threshold | Scenario probability exceeds 50% | Two consecutive monthly reviews |
-| Single indicator | US federal AI legislation fails (I-03) | Congressional record |
+| Single indicator | US federal AI legislation fails (I-04) | Congressional record |
 | Indicator cluster | 3+ indicators signal fragmented governance | Weekly scan consensus |
 | External event | EU AI Act enforcement begins with no US equivalent | Official enforcement date |
 
@@ -276,3 +276,4 @@ Some actions make sense regardless of scenario. These should be **pre-positioned
 | Version | Date | Changes |
 |---------|------|---------|
 | 1.0 | 2024-12 | Initial template and example |
+| 1.2 | 2026-11 | Corrected indicator reference in worked example (I-04 is US legislation) |

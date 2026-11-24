@@ -227,8 +227,20 @@ NARRATIVE HINTS:
 
 <!--
 NOTE: Probabilities must sum to 100%
-These are starting points — update quarterly based on indicators
+These are starting points — update monthly based on indicators (see framework/probability_updates.md)
 -->
+
+---
+
+## Generate the Matrix
+
+Once the axes, names, taglines and probabilities above are settled, copy them into a JSON file modelled on `scripts/scenarios_config.json` and render the matrix:
+
+```bash
+python3 scripts/generate_matrix.py --config my_scenarios.json --output my_matrix.md
+```
+
+The script checks that probabilities sum to 100 and draws the 2x2 with your names wrapped to fit. Schema: `scripts/README.md`.
 
 ---
 
@@ -247,6 +259,14 @@ Common problems to avoid:
 - ❌ Treating scenarios as predictions
 - ❌ Science fiction (must be plausible)
 - ❌ Scenarios that are too similar to each other
+
+More in `FAQ.md` (why four scenarios, when three or five, what to do when a scenario "comes true").
+
+---
+
+## Next Step
+
+Define 8-12 indicators in `templates/indicator_template.md` so you can tell which of these worlds is arriving. Then stress-test your strategy against all four using `framework/decisions.md`.
 
 ---
 
