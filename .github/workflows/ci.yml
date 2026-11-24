@@ -12,7 +12,9 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        python: ["3.9", "3.12"]
+        # "3.x" is whatever the runner image ships; pin one older version that
+        # setup-python still publishes for current ubuntu-latest images.
+        python: ["3.12", "3.x"]
     steps:
       - uses: actions/checkout@v4
 
