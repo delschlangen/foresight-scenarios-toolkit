@@ -141,26 +141,28 @@ This combination performs well (3+/5) across all scenarios.
 
 ## Current Probability-Weighted Analysis
 
-Current probabilities:
+Current probabilities (the toolkit's Q4 2024 baseline, see `framework/scenarios.md`):
 - Coordinated Caution: 20%
-- Emergency Coordination: 10%
+- Emergency Coordination: 15%
 - Patchwork Progress: 45%
-- Fragmented Scramble: 25%
+- Fragmented Scramble: 20%
 
 ### Expected Value Calculation
 
-| Option | CC×.20 | EC×.10 | PP×.45 | FS×.25 | EV |
+| Option | CC×.20 | EC×.15 | PP×.45 | FS×.20 | EV |
 |--------|--------|--------|--------|--------|-----|
-| A. Capability-First | 0.4 | 0.1 | 1.8 | 0.75 | 3.05 |
-| **B. Balanced** | 0.8 | 0.3 | 1.8 | 0.75 | **3.65** |
-| C. Compliance-First | 0.8 | 0.3 | 0.9 | 0.25 | 2.25 |
-| D. Safety-First | 0.6 | 0.5 | 0.9 | 0.75 | 2.75 |
-| 1. US Focus | 0.4 | 0.2 | 1.8 | 1.0 | 3.4 |
-| 2. Dual Track | 0.6 | 0.2 | 1.8 | 0.5 | 3.1 |
-| 3. EU Standard | 1.0 | 0.4 | 0.9 | 0.25 | 2.55 |
-| **4. Multi-Modal** | 0.8 | 0.4 | 2.25 | 1.0 | **4.45** |
+| A. Capability-First | 0.40 | 0.15 | 1.80 | 0.60 | 2.95 |
+| **B. Balanced** | 0.80 | 0.45 | 1.80 | 0.60 | **3.65** |
+| C. Compliance-First | 0.80 | 0.45 | 0.90 | 0.20 | 2.35 |
+| D. Safety-First | 0.60 | 0.75 | 0.90 | 0.60 | 2.85 |
+| 1. US Focus | 0.40 | 0.30 | 1.80 | 0.80 | 3.30 |
+| 2. Dual Track | 0.60 | 0.30 | 1.80 | 0.40 | 3.10 |
+| 3. EU Standard | 1.00 | 0.60 | 0.90 | 0.20 | 2.70 |
+| **4. Multi-Modal** | 0.80 | 0.60 | 2.25 | 0.80 | **4.45** |
 
 **Probability-Weighted Best:** B + 4 (Balanced + Multi-Modal) = 3.65 + 4.45 = 8.1
+
+Note how little the ranking depends on the exact probabilities: B and 4 win under any plausible weighting because they are the *robust* options (highest minimum score above), not because of the point estimates. That is the pattern to look for.
 
 ---
 
@@ -246,3 +248,4 @@ Regardless of scenario, do these now:
 | Version | Date | Changes |
 |---------|------|---------|
 | 1.0 | 2024-12 | Initial example |
+| 1.2 | 2026-11 | Probabilities aligned with the scenario set (20/15/45/20); expected values recomputed |

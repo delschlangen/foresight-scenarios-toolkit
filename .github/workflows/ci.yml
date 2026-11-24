@@ -1,0 +1,30 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  test:
+    name: Generators and consistency checks (Python ${{ matrix.python }})
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        python: ["3.9", "3.12"]
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python }}
+
+      - name: Run generators (smoke test, no side effects)
+        run: |
+          python scripts/generate_matrix.py > /dev/null
+          python scripts/generate_indicators.py > /dev/null
+          git diff --exit-code
+
+      - name: Run tests
+        run: python -m unittest discover -s scripts -p "test_*.py" -v

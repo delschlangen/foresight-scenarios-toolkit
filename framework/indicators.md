@@ -2,6 +2,8 @@
 
 Early warning indicators to detect which scenario is emerging.
 
+> **Example status:** This register was written in Q4 2024 as the toolkit's worked example and has not been refreshed since. Treat the thresholds and linkages as a model of *how* to build a register, not as a live assessment. The machine-readable version is `scripts/indicators_config.json`; `examples/indicator_register.md` and `.csv` are generated from it.
+
 ---
 
 ## Indicator Summary
@@ -30,7 +32,7 @@ Early warning indicators to detect which scenario is emerging.
 | **Signal** | Major capability releases from frontier labs (OpenAI, Anthropic, Google DeepMind, Meta) |
 | **What to watch** | Gap between releases; magnitude of capability jumps; emergence of unexpected capabilities |
 | **Source** | Lab blogs, arXiv, press releases, product launches |
-| **Threshold** | Capability that significantly exceeds extrapolated scaling → supports Discontinuous axis |
+| **Threshold** | Release whose capability gains clearly exceed the prior 12-month trend (not a routine iteration) → supports Discontinuous axis |
 | **Scenario linkage** | Incremental releases → Coordinated Caution/Patchwork; Major leap → Emergency/Scramble |
 | **Confidence** | High — direct observation |
 | **Frequency** | Continuous; review weekly |
@@ -42,7 +44,7 @@ Early warning indicators to detect which scenario is emerging.
 | **Signal** | Departures, public statements, or whistleblowing from AI safety researchers at major labs |
 | **What to watch** | Resignation letters citing safety concerns; public warnings; regulatory testimony |
 | **Source** | Social media, press coverage, Congressional testimony |
-| **Threshold** | Multiple senior departures with safety rationale → supports Emergency scenarios |
+| **Threshold** | Two or more senior safety researchers leave a frontier lab within a quarter citing safety concerns → supports Emergency scenarios |
 | **Scenario linkage** | Departures + concern → Emergency Coordination; Business as usual → Caution/Patchwork |
 | **Confidence** | Medium — interpretation required |
 | **Frequency** | Weekly scan |
@@ -54,7 +56,7 @@ Early warning indicators to detect which scenario is emerging.
 | **Signal** | High-level international meetings, summits, or treaty negotiations on AI governance |
 | **What to watch** | Frequency; participation level; binding commitments vs. statements |
 | **Source** | Government announcements, UN, OECD, bilateral summits |
-| **Threshold** | Binding multilateral agreement → strongly supports Harmonized axis |
+| **Threshold** | Binding multilateral AI agreement announced (not a voluntary declaration) → strongly supports Harmonized axis |
 | **Scenario linkage** | Progress → Coordinated Caution; Stalemate → Patchwork/Scramble |
 | **Confidence** | High — observable events |
 | **Frequency** | Monthly review |
@@ -66,7 +68,7 @@ Early warning indicators to detect which scenario is emerging.
 | **Signal** | Progress of comprehensive federal AI legislation through Congress |
 | **What to watch** | Bill introductions, committee hearings, floor votes, presidential statements |
 | **Source** | Congress.gov, press coverage, lobbyist activity |
-| **Threshold** | Comprehensive bill passage → supports Harmonized axis; Continued inaction → Fragmented |
+| **Threshold** | Comprehensive federal AI bill passes committee or a floor vote → supports Harmonized axis; continued inaction → Fragmented |
 | **Scenario linkage** | Federal framework → Coordinated Caution; State-only patchwork → Patchwork Progress |
 | **Confidence** | High — directly observable |
 | **Frequency** | Monthly during session |
@@ -78,7 +80,7 @@ Early warning indicators to detect which scenario is emerging.
 | **Signal** | Enforcement actions, fines, or compliance mandates under EU AI Act |
 | **What to watch** | First major enforcement; company responses; withdrawal from EU market |
 | **Source** | EU Commission, national regulators, press |
-| **Threshold** | Major fines + compliance → AI Act as de facto standard; Weak enforcement → limited impact |
+| **Threshold** | First major fine or compliance order issued under the EU AI Act → AI Act becomes de facto standard; weak enforcement → limited impact |
 | **Scenario linkage** | Strong enforcement → Patchwork Progress; Harmonization with US → Coordinated Caution |
 | **Confidence** | High — observable actions |
 | **Frequency** | Monthly |
@@ -90,7 +92,7 @@ Early warning indicators to detect which scenario is emerging.
 | **Signal** | Significant AI system failures, harms, or near-misses reported publicly |
 | **What to watch** | Severity; media coverage; policy response; lab response |
 | **Source** | Press, incident databases, regulatory filings, academic papers |
-| **Threshold** | Catastrophic incident → catalyst for Emergency scenarios |
+| **Threshold** | Incident causing significant harm or a credible near-miss, with a regulatory or lab response → catalyst for Emergency scenarios |
 | **Scenario linkage** | Major incident + response → Emergency Coordination; Major incident + no response → Fragmented Scramble |
 | **Confidence** | High for occurrence; medium for interpretation |
 | **Frequency** | Continuous monitoring |
@@ -102,7 +104,7 @@ Early warning indicators to detect which scenario is emerging.
 | **Signal** | Government proposals to regulate AI training compute (reporting, licensing, restrictions) |
 | **What to watch** | Threshold levels; international coordination; enforcement mechanisms |
 | **Source** | Executive orders, legislation, international agreements |
-| **Threshold** | Coordinated compute controls → Emergency Coordination; National-only → Fragmented |
+| **Threshold** | Mandatory compute reporting or licensing formally proposed by a major jurisdiction → Emergency Coordination if coordinated internationally; national-only → Fragmented |
 | **Scenario linkage** | Strong compute governance → Emergency Coordination; Voluntary only → Patchwork |
 | **Confidence** | High — specific policy proposals |
 | **Frequency** | Monthly |
@@ -114,7 +116,7 @@ Early warning indicators to detect which scenario is emerging.
 | **Signal** | Employment statistics in AI-affected sectors; company layoff announcements citing AI |
 | **What to watch** | Rate of change; affected sectors; political response |
 | **Source** | BLS, company announcements, industry surveys |
-| **Threshold** | Rapid displacement → increases pressure for regulation (either direction) |
+| **Threshold** | Displacement rate in AI-exposed sectors exceeds historical automation trends → increases pressure for regulation (either direction) |
 | **Scenario linkage** | Slow displacement → Patchwork Progress; Rapid → either Coordinated response or Scramble |
 | **Confidence** | Medium — lagging indicator |
 | **Frequency** | Quarterly |
@@ -126,7 +128,7 @@ Early warning indicators to detect which scenario is emerging.
 | **Signal** | New US export controls on AI chips, models, or talent; retaliatory measures |
 | **What to watch** | Scope of restrictions; allied participation; Chinese response |
 | **Source** | Commerce Dept, press, trade policy analysis |
-| **Threshold** | Broad escalation → Fragmented Scramble; Negotiated limits → allows Coordination |
+| **Threshold** | Major new export restrictions or retaliatory measures announced → Fragmented Scramble; negotiated limits → allows Coordination |
 | **Scenario linkage** | Escalation → Fragmented; De-escalation → opens path to Coordinated scenarios |
 | **Confidence** | High — directly observable |
 | **Frequency** | Monthly |
@@ -138,7 +140,7 @@ Early warning indicators to detect which scenario is emerging.
 | **Signal** | Government and philanthropic funding for AI safety/alignment research |
 | **What to watch** | Funding levels; institutional homes; lab participation |
 | **Source** | Grant announcements, budget documents, lab commitments |
-| **Threshold** | Major increase → supports Coordinated Caution; Flat/declining → Patchwork/Scramble |
+| **Threshold** | >50% year-over-year increase in government or philanthropic AI safety funding → supports Coordinated Caution; flat/declining → Patchwork/Scramble |
 | **Scenario linkage** | Increased investment → seriousness about safety; Flat → business as usual |
 | **Confidence** | High — measurable |
 | **Frequency** | Quarterly |
@@ -149,22 +151,44 @@ Early warning indicators to detect which scenario is emerging.
 
 | Frequency | Indicators | Action |
 |-----------|------------|--------|
+| **Continuous** | I-06 | Alert on threshold breach; log immediately |
 | **Weekly** | I-01, I-02 | Quick scan; log notable items |
 | **Monthly** | I-03, I-04, I-05, I-07, I-09 | Review trends; update scenario assessment |
-| **Quarterly** | I-06, I-08, I-10 | Deep review; revise scenario probabilities |
+| **Quarterly** | I-08, I-10 | Deep review; revise scenario probabilities |
+
+---
+
+## Indicator Status Log
+
+Each indicator carries a status so "has it fired?" has an answer. Vocabulary: **Watching** (baseline), **Elevated** (partial evidence), **Fired** (threshold crossed, verified), **Retired** (no longer tracked).
+
+| ID | Status | Last Reviewed | Last Fired | Note |
+|----|--------|---------------|------------|------|
+| I-01 | Watching | 2024-12 | — | |
+| I-02 | Watching | 2024-12 | — | Red-team story (weekly scan, Dec 2024) unconfirmed |
+| I-03 | Watching | 2024-12 | — | |
+| I-04 | Watching | 2024-12 | — | |
+| I-05 | Watching | 2024-12 | — | |
+| I-06 | Watching | 2024-12 | — | |
+| I-07 | Watching | 2024-12 | — | |
+| I-08 | Watching | 2024-12 | — | |
+| I-09 | Watching | 2024-12 | — | |
+| I-10 | Watching | 2024-12 | — | |
+
+When an indicator fires, record it here, then run the worksheet in `probability_updates.md` and, if a trigger condition is met, the relevant playbook in `contingency.md`.
 
 ---
 
 ## Scenario Probability Tracker
 
-Update quarterly based on indicator signals.
+Baseline probabilities set in Q4 2024. Update monthly using `probability_updates.md`; log every change.
 
-| Scenario | Initial (2024 Q4) | Current | Trend |
-|----------|-------------------|---------|-------|
-| Coordinated Caution | 20% | ___ | ___ |
-| Emergency Coordination | 15% | ___ | ___ |
-| Patchwork Progress | 45% | ___ | ___ |
-| Fragmented Scramble | 20% | ___ | ___ |
+| Scenario | Baseline (Q4 2024) | Current | Trend | Driven by |
+|----------|--------------------|---------|-------|-----------|
+| Coordinated Caution | 20% | ___ | ___ | |
+| Emergency Coordination | 15% | ___ | ___ | |
+| Patchwork Progress | 45% | ___ | ___ | |
+| Fragmented Scramble | 20% | ___ | ___ | |
 
 ---
 
@@ -173,3 +197,4 @@ Update quarterly based on indicator signals.
 | Version | Date | Changes |
 |---------|------|---------|
 | 1.0 | 2024-12 | Initial indicator set |
+| 1.2 | 2026-11 | Measurable thresholds aligned with `scripts/indicators_config.json`; I-06 moved to Continuous; status log added |

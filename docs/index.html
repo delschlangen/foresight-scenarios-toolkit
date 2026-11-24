@@ -3,7 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI Governance Futures | Foresight Scenarios Toolkit</title>
+    <title>Foresight Scenarios Toolkit | Interactive Scenario Planning</title>
+    <meta name="description" content="An open scenario-planning toolkit. Explore the interactive 2x2 AI governance scenario matrix, then use the templates, decision framework and indicator tracking to build your own.">
+    <link rel="canonical" href="https://delschlangen.github.io/foresight-scenarios-toolkit/">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Foresight Scenarios Toolkit">
+    <meta property="og:description" content="Interactive 2x2 scenario matrix plus templates, indicator tracking and a decision framework for strategic foresight. Open source, MIT licensed.">
+    <meta property="og:url" content="https://delschlangen.github.io/foresight-scenarios-toolkit/">
+    <meta property="og:site_name" content="Foresight Scenarios Toolkit">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Foresight Scenarios Toolkit">
+    <meta name="twitter:description" content="Interactive 2x2 scenario matrix plus templates, indicator tracking and a decision framework for strategic foresight.">
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%231a365d'/%3E%3Cpath d='M16 5l11 11-11 11L5 16z' fill='%233182ce'/%3E%3C/svg%3E">
     <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -31,19 +42,25 @@
     <!-- Hero Section -->
     <section class="hero">
         <div class="hero-content">
+            <p class="hero-kicker">Worked example &middot; AI governance 2024-2030</p>
             <h1>AI Governance Futures</h1>
-            <p class="hero-subtitle">Strategic scenarios for 2024-2030</p>
-            <p class="hero-description">Four plausible futures exploring the intersection of AI capability trajectories and global regulatory coherence.</p>
+            <p class="hero-subtitle">Four plausible futures at the intersection of AI capability and regulatory coherence</p>
+            <p class="hero-description">Click a quadrant to read the scenario. Then use the same method, templates and scripts to build a scenario set for your own strategic question.</p>
+            <div class="hero-actions">
+                <a href="#toolkit" class="btn btn-primary">Use the toolkit</a>
+                <a href="https://github.com/delschlangen/foresight-scenarios-toolkit/blob/main/guides/runbook.md" class="btn btn-secondary" target="_blank" rel="noopener">Read the 2-hour runbook</a>
+            </div>
         </div>
     </section>
 
     <!-- Navigation Tabs -->
     <div class="tabs-container">
-        <div class="tabs">
-            <button class="tab active" data-tab="matrix">Scenario Matrix</button>
-            <button class="tab" data-tab="drivers">Drivers</button>
-            <button class="tab" data-tab="indicators">Indicators</button>
-            <button class="tab" data-tab="methodology">Methodology</button>
+        <div class="tabs" role="tablist" aria-label="Site sections">
+            <button class="tab active" role="tab" id="tab-matrix" data-tab="matrix" aria-selected="true" aria-controls="matrix">Matrix</button>
+            <button class="tab" role="tab" id="tab-drivers" data-tab="drivers" aria-selected="false" aria-controls="drivers" tabindex="-1">Drivers</button>
+            <button class="tab" role="tab" id="tab-indicators" data-tab="indicators" aria-selected="false" aria-controls="indicators" tabindex="-1">Indicators</button>
+            <button class="tab" role="tab" id="tab-methodology" data-tab="methodology" aria-selected="false" aria-controls="methodology" tabindex="-1">Methodology</button>
+            <button class="tab tab-cta" role="tab" id="tab-toolkit" data-tab="toolkit" aria-selected="false" aria-controls="toolkit" tabindex="-1">Use the Toolkit</button>
         </div>
     </div>
 
@@ -51,7 +68,7 @@
     <main class="main-content">
 
         <!-- Matrix Tab -->
-        <section id="matrix" class="tab-content active">
+        <section id="matrix" class="tab-content active" role="tabpanel" aria-labelledby="tab-matrix">
             <div class="matrix-section">
                 <div class="matrix-container">
                     <!-- Y-axis label -->
@@ -74,7 +91,7 @@
                                     <span class="prob-value">20%</span>
                                 </div>
                             </div>
-                            <div class="quadrant-hover">Click to explore</div>
+                            <div class="quadrant-hover">Details &rarr;</div>
                         </div>
 
                         <!-- Quadrant 2: Top-Right -->
@@ -88,7 +105,7 @@
                                     <span class="prob-value">15%</span>
                                 </div>
                             </div>
-                            <div class="quadrant-hover">Click to explore</div>
+                            <div class="quadrant-hover">Details &rarr;</div>
                         </div>
 
                         <!-- Quadrant 3: Bottom-Left -->
@@ -102,7 +119,7 @@
                                     <span class="prob-value highlight">45%</span>
                                 </div>
                             </div>
-                            <div class="quadrant-hover">Click to explore</div>
+                            <div class="quadrant-hover">Details &rarr;</div>
                         </div>
 
                         <!-- Quadrant 4: Bottom-Right -->
@@ -116,7 +133,7 @@
                                     <span class="prob-value">20%</span>
                                 </div>
                             </div>
-                            <div class="quadrant-hover">Click to explore</div>
+                            <div class="quadrant-hover">Details &rarr;</div>
                         </div>
                     </div>
 
@@ -130,7 +147,7 @@
 
                 <!-- Probability Summary -->
                 <div class="probability-summary">
-                    <h4>Current Assessment (Q4 2024)</h4>
+                    <h4>Baseline Assessment (as of Q4 2024)</h4>
                     <div class="prob-bars">
                         <div class="prob-bar">
                             <span class="bar-label">Coordinated Caution</span>
@@ -161,15 +178,16 @@
                             <span class="bar-value">20%</span>
                         </div>
                     </div>
+                    <p class="prob-note">Example baseline from the toolkit's worked case, not a live forecast. <a href="https://github.com/delschlangen/foresight-scenarios-toolkit/blob/main/framework/probability_updates.md" target="_blank" rel="noopener">How probabilities get updated &rarr;</a></p>
                 </div>
             </div>
         </section>
 
         <!-- Drivers Tab -->
-        <section id="drivers" class="tab-content">
+        <section id="drivers" class="tab-content" role="tabpanel" aria-labelledby="tab-drivers">
             <div class="drivers-section">
                 <h2>Driver Analysis</h2>
-                <p class="section-intro">12 forces shaping the AI governance landscape, analyzed by impact and uncertainty.</p>
+                <p class="section-intro">14 forces shaping the AI governance landscape, analyzed by impact and uncertainty across all six STEEP+T categories.</p>
 
                 <div class="drivers-grid">
                     <!-- Technological Drivers -->
@@ -535,6 +553,76 @@
                             </div>
                         </div>
                     </div>
+
+                    <!-- Environmental Drivers -->
+                    <div class="driver-category">
+                        <h3><span class="category-icon">En</span> Environmental</h3>
+                        <div class="driver-cards">
+                            <div class="driver-card">
+                                <div class="driver-id">En1</div>
+                                <h4>Energy and Data-Center Constraints</h4>
+                                <p>Availability and cost of electricity, water and grid capacity for AI training and inference</p>
+                                <div class="driver-metrics">
+                                    <div class="metric">
+                                        <span class="metric-label">Impact</span>
+                                        <div class="dots">
+                                            <span class="dot filled"></span>
+                                            <span class="dot filled"></span>
+                                            <span class="dot filled"></span>
+                                            <span class="dot filled"></span>
+                                            <span class="dot"></span>
+                                        </div>
+                                    </div>
+                                    <div class="metric">
+                                        <span class="metric-label">Uncertainty</span>
+                                        <div class="dots">
+                                            <span class="dot filled"></span>
+                                            <span class="dot filled"></span>
+                                            <span class="dot filled"></span>
+                                            <span class="dot"></span>
+                                            <span class="dot"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <span class="driver-priority high">High</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Threat Drivers -->
+                    <div class="driver-category">
+                        <h3><span class="category-icon">Th</span> Threat</h3>
+                        <div class="driver-cards">
+                            <div class="driver-card">
+                                <div class="driver-id">Th1</div>
+                                <h4>Malicious Use of Frontier Models</h4>
+                                <p>Use of capable models for cyberattack, fraud, influence operations or weapons-relevant knowledge</p>
+                                <div class="driver-metrics">
+                                    <div class="metric">
+                                        <span class="metric-label">Impact</span>
+                                        <div class="dots">
+                                            <span class="dot filled"></span>
+                                            <span class="dot filled"></span>
+                                            <span class="dot filled"></span>
+                                            <span class="dot filled"></span>
+                                            <span class="dot filled"></span>
+                                        </div>
+                                    </div>
+                                    <div class="metric">
+                                        <span class="metric-label">Uncertainty</span>
+                                        <div class="dots">
+                                            <span class="dot filled"></span>
+                                            <span class="dot filled"></span>
+                                            <span class="dot filled"></span>
+                                            <span class="dot filled"></span>
+                                            <span class="dot"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <span class="driver-priority critical">Critical</span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
                 <!-- Critical Uncertainties -->
@@ -566,14 +654,15 @@
         </section>
 
         <!-- Indicators Tab -->
-        <section id="indicators" class="tab-content">
+        <section id="indicators" class="tab-content" role="tabpanel" aria-labelledby="tab-indicators">
             <div class="indicators-section">
                 <h2>Indicator Register</h2>
-                <p class="section-intro">10 early warning signals to detect which scenario is emerging.</p>
+                <p class="section-intro">10 early warning signals to detect which scenario is emerging. Each has a threshold two analysts would agree has been crossed, a source, a frequency and a status.</p>
 
                 <!-- Probability Dashboard -->
                 <div class="probability-dashboard">
                     <h3>Scenario Probability Tracker</h3>
+                    <p class="prob-note">Baseline as of Q4 2024, all indicators at status Watching. In a live register these move monthly via the <a href="https://github.com/delschlangen/foresight-scenarios-toolkit/blob/main/framework/probability_updates.md" target="_blank" rel="noopener">probability update worksheet</a>.</p>
                     <div class="scenario-probs">
                         <div class="scenario-prob q1-bg">
                             <span class="scenario-name">Coordinated Caution</span>
@@ -620,7 +709,7 @@
                                 </td>
                                 <td><span class="scenario-tag all">All (capability axis)</span></td>
                                 <td><span class="type-tag leading">Leading</span></td>
-                                <td>Capability significantly exceeds extrapolated scaling</td>
+                                <td>Release whose capability gains clearly exceed the prior 12-month trend (not a routine iteration)</td>
                                 <td>Weekly</td>
                             </tr>
                             <tr>
@@ -631,7 +720,7 @@
                                 </td>
                                 <td><span class="scenario-tag q2">Emergency Coordination</span></td>
                                 <td><span class="type-tag leading">Leading</span></td>
-                                <td>Multiple senior departures with safety rationale</td>
+                                <td>Two or more senior safety researchers leave a frontier lab within a quarter citing safety concerns</td>
                                 <td>Weekly</td>
                             </tr>
                             <tr>
@@ -642,7 +731,7 @@
                                 </td>
                                 <td><span class="scenario-tag q1">Coordinated Caution</span></td>
                                 <td><span class="type-tag leading">Leading</span></td>
-                                <td>Binding multilateral agreement signed</td>
+                                <td>Binding multilateral AI agreement announced (not a voluntary declaration)</td>
                                 <td>Monthly</td>
                             </tr>
                             <tr>
@@ -653,7 +742,7 @@
                                 </td>
                                 <td><span class="scenario-tag q1">Coordinated Caution</span></td>
                                 <td><span class="type-tag confirming">Confirming</span></td>
-                                <td>Comprehensive bill passage</td>
+                                <td>Comprehensive federal AI bill passes committee or a floor vote</td>
                                 <td>Monthly</td>
                             </tr>
                             <tr>
@@ -664,7 +753,7 @@
                                 </td>
                                 <td><span class="scenario-tag q3">Patchwork Progress</span></td>
                                 <td><span class="type-tag confirming">Confirming</span></td>
-                                <td>Major fines + compliance response</td>
+                                <td>First major fine or compliance order issued under the EU AI Act</td>
                                 <td>Monthly</td>
                             </tr>
                             <tr>
@@ -675,7 +764,7 @@
                                 </td>
                                 <td><span class="scenario-tag emergency">Emergency scenarios</span></td>
                                 <td><span class="type-tag confirming">Confirming</span></td>
-                                <td>Catastrophic incident occurs</td>
+                                <td>Incident causing significant harm or a credible near-miss, with a regulatory or lab response</td>
                                 <td>Continuous</td>
                             </tr>
                             <tr>
@@ -686,7 +775,7 @@
                                 </td>
                                 <td><span class="scenario-tag q2">Emergency Coordination</span></td>
                                 <td><span class="type-tag leading">Leading</span></td>
-                                <td>Coordinated international compute controls</td>
+                                <td>Mandatory compute reporting or licensing formally proposed by a major jurisdiction</td>
                                 <td>Monthly</td>
                             </tr>
                             <tr>
@@ -697,7 +786,7 @@
                                 </td>
                                 <td><span class="scenario-tag all">All</span></td>
                                 <td><span class="type-tag lagging">Lagging</span></td>
-                                <td>Rapid displacement rate</td>
+                                <td>Displacement rate in AI-exposed sectors exceeds historical automation trends</td>
                                 <td>Quarterly</td>
                             </tr>
                             <tr>
@@ -708,7 +797,7 @@
                                 </td>
                                 <td><span class="scenario-tag q4">Fragmented Scramble</span></td>
                                 <td><span class="type-tag confirming">Confirming</span></td>
-                                <td>Broad escalation + retaliation</td>
+                                <td>Major new export restrictions or retaliatory measures announced</td>
                                 <td>Monthly</td>
                             </tr>
                             <tr>
@@ -719,7 +808,7 @@
                                 </td>
                                 <td><span class="scenario-tag q1">Coordinated Caution</span></td>
                                 <td><span class="type-tag leading">Leading</span></td>
-                                <td>Major funding increase (>50%)</td>
+                                <td>>50% year-over-year increase in government or philanthropic AI safety funding</td>
                                 <td>Quarterly</td>
                             </tr>
                         </tbody>
@@ -731,6 +820,11 @@
                     <h3>Monitoring Schedule</h3>
                     <div class="schedule-grid">
                         <div class="schedule-item">
+                            <span class="schedule-freq">Continuous</span>
+                            <span class="schedule-indicators">I-06</span>
+                            <span class="schedule-action">Alert on threshold breach; log immediately</span>
+                        </div>
+                        <div class="schedule-item">
                             <span class="schedule-freq">Weekly</span>
                             <span class="schedule-indicators">I-01, I-02</span>
                             <span class="schedule-action">Quick scan; log notable items</span>
@@ -738,12 +832,12 @@
                         <div class="schedule-item">
                             <span class="schedule-freq">Monthly</span>
                             <span class="schedule-indicators">I-03, I-04, I-05, I-07, I-09</span>
-                            <span class="schedule-action">Review trends; update assessment</span>
+                            <span class="schedule-action">Review trends; run the probability worksheet</span>
                         </div>
                         <div class="schedule-item">
                             <span class="schedule-freq">Quarterly</span>
-                            <span class="schedule-indicators">I-06, I-08, I-10</span>
-                            <span class="schedule-action">Deep review; revise probabilities</span>
+                            <span class="schedule-indicators">I-08, I-10</span>
+                            <span class="schedule-action">Deep review; revisit the scenario set</span>
                         </div>
                     </div>
                 </div>
@@ -751,7 +845,7 @@
         </section>
 
         <!-- Methodology Tab -->
-        <section id="methodology" class="tab-content">
+        <section id="methodology" class="tab-content" role="tabpanel" aria-labelledby="tab-methodology">
             <div class="methodology-section">
                 <h2>Foresight Methodology</h2>
                 <p class="section-intro">A structured approach to strategic foresight, adapted from Shell's scenario planning methodology.</p>
@@ -881,21 +975,137 @@
                 </div>
             </div>
         </section>
+
+        <!-- Use the Toolkit Tab -->
+        <section id="toolkit" class="tab-content" role="tabpanel" aria-labelledby="tab-toolkit">
+            <div class="toolkit-section">
+                <h2>Use the Toolkit</h2>
+                <p class="section-intro">The scenarios on this site are a worked example. The toolkit itself is a method, blank templates, a decision framework and two small scripts, all open source (MIT) in the GitHub repository.</p>
+
+                <div class="toolkit-start">
+                    <div class="toolkit-start-text">
+                        <h3>Start here: the two-hour runbook</h3>
+                        <p>Focal question, drivers, axes, four scenarios, indicators and a first strategy stress-test, in one sitting, with time boxes and the exact commands.</p>
+                    </div>
+                    <a class="btn btn-primary" href="https://github.com/delschlangen/foresight-scenarios-toolkit/blob/main/guides/runbook.md" target="_blank" rel="noopener">Open the runbook</a>
+                </div>
+
+                <h3 class="toolkit-group-title">Templates</h3>
+                <div class="toolkit-grid">
+                    <a class="toolkit-card" href="https://github.com/delschlangen/foresight-scenarios-toolkit/blob/main/templates/drivers_template.md" target="_blank" rel="noopener">
+                        <span class="card-kicker">Template</span>
+                        <h4>Drivers</h4>
+                        <p>Score 10-15 forces for impact and uncertainty across STEEP+T; pick the two axes.</p>
+                        <span class="card-link">Open on GitHub &rarr;</span>
+                    </a>
+                    <a class="toolkit-card" href="https://github.com/delschlangen/foresight-scenarios-toolkit/blob/main/templates/scenario_template.md" target="_blank" rel="noopener">
+                        <span class="card-kicker">Template</span>
+                        <h4>Scenarios</h4>
+                        <p>Axes, names, taglines, narratives, winners and losers, probabilities, quality checklist.</p>
+                        <span class="card-link">Open on GitHub &rarr;</span>
+                    </a>
+                    <a class="toolkit-card" href="https://github.com/delschlangen/foresight-scenarios-toolkit/blob/main/templates/indicator_template.md" target="_blank" rel="noopener">
+                        <span class="card-kicker">Template</span>
+                        <h4>Indicators</h4>
+                        <p>8-12 signals with measurable thresholds, sources, frequency and status.</p>
+                        <span class="card-link">Open on GitHub &rarr;</span>
+                    </a>
+                    <a class="toolkit-card" href="https://github.com/delschlangen/foresight-scenarios-toolkit/blob/main/templates/weekly_scan_template.md" target="_blank" rel="noopener">
+                        <span class="card-kicker">Template</span>
+                        <h4>Weekly scan</h4>
+                        <p>The 30-minute horizon scan that keeps the set alive, with action tracking.</p>
+                        <span class="card-link">Open on GitHub &rarr;</span>
+                    </a>
+                    <a class="toolkit-card" href="https://github.com/delschlangen/foresight-scenarios-toolkit/blob/main/templates/probability_log_template.md" target="_blank" rel="noopener">
+                        <span class="card-kicker">Template</span>
+                        <h4>Probability log</h4>
+                        <p>An auditable record of every probability change and the indicators behind it.</p>
+                        <span class="card-link">Open on GitHub &rarr;</span>
+                    </a>
+                </div>
+
+                <h3 class="toolkit-group-title">Turn scenarios into decisions</h3>
+                <div class="toolkit-grid">
+                    <a class="toolkit-card" href="https://github.com/delschlangen/foresight-scenarios-toolkit/blob/main/framework/decisions.md" target="_blank" rel="noopener">
+                        <span class="card-kicker">Framework</span>
+                        <h4>Decision framework</h4>
+                        <p>Stress-test your strategy against all four worlds, find robust moves, set triggers.</p>
+                        <span class="card-link">Open on GitHub &rarr;</span>
+                    </a>
+                    <a class="toolkit-card" href="https://github.com/delschlangen/foresight-scenarios-toolkit/blob/main/framework/contingency.md" target="_blank" rel="noopener">
+                        <span class="card-kicker">Framework</span>
+                        <h4>Contingency playbooks</h4>
+                        <p>Pre-built responses with trigger conditions, phased actions and a worked example.</p>
+                        <span class="card-link">Open on GitHub &rarr;</span>
+                    </a>
+                    <a class="toolkit-card" href="https://github.com/delschlangen/foresight-scenarios-toolkit/blob/main/framework/probability_updates.md" target="_blank" rel="noopener">
+                        <span class="card-kicker">Framework</span>
+                        <h4>Updating probabilities</h4>
+                        <p>A worksheet for moving probabilities when indicators fire, without false precision.</p>
+                        <span class="card-link">Open on GitHub &rarr;</span>
+                    </a>
+                    <a class="toolkit-card" href="https://github.com/delschlangen/foresight-scenarios-toolkit/blob/main/examples/strategic_options.md" target="_blank" rel="noopener">
+                        <span class="card-kicker">Example</span>
+                        <h4>Strategic options</h4>
+                        <p>Eight options scored across four scenarios: robustness, expected value, triggers.</p>
+                        <span class="card-link">Open on GitHub &rarr;</span>
+                    </a>
+                </div>
+
+                <h3 class="toolkit-group-title">Guides and reference</h3>
+                <div class="toolkit-grid">
+                    <a class="toolkit-card" href="https://github.com/delschlangen/foresight-scenarios-toolkit/blob/main/guides/facilitation.md" target="_blank" rel="noopener">
+                        <span class="card-kicker">Guide</span>
+                        <h4>Workshop facilitation</h4>
+                        <p>One-day agenda, facilitator scripts, remote adaptations, common challenges.</p>
+                        <span class="card-link">Open on GitHub &rarr;</span>
+                    </a>
+                    <a class="toolkit-card" href="https://github.com/delschlangen/foresight-scenarios-toolkit/blob/main/guides/adaptation.md" target="_blank" rel="noopener">
+                        <span class="card-kicker">Guide</span>
+                        <h4>Adapt to your domain</h4>
+                        <p>Step by step, with a complete second example for an energy company.</p>
+                        <span class="card-link">Open on GitHub &rarr;</span>
+                    </a>
+                    <a class="toolkit-card" href="https://github.com/delschlangen/foresight-scenarios-toolkit/blob/main/CHEATSHEET.md" target="_blank" rel="noopener">
+                        <span class="card-kicker">Reference</span>
+                        <h4>Cheat sheet</h4>
+                        <p>The whole method on one page: stages, rules of thumb, cadence, thresholds.</p>
+                        <span class="card-link">Open on GitHub &rarr;</span>
+                    </a>
+                    <a class="toolkit-card" href="https://github.com/delschlangen/foresight-scenarios-toolkit/blob/main/FAQ.md" target="_blank" rel="noopener">
+                        <span class="card-kicker">Reference</span>
+                        <h4>FAQ and anti-patterns</h4>
+                        <p>Why four scenarios, how to brief a board, what a stale set looks like.</p>
+                        <span class="card-link">Open on GitHub &rarr;</span>
+                    </a>
+                </div>
+
+                <h3 class="toolkit-group-title">Generate your own matrix and register</h3>
+                <div class="quick-start">
+                    <p>Two standard-library Python scripts render Markdown (and CSV) from JSON configs. Nothing to install.</p>
+                    <pre><code>git clone https://github.com/delschlangen/foresight-scenarios-toolkit.git
+cd foresight-scenarios-toolkit
+python3 scripts/generate_matrix.py --config my_scenarios.json --output my_matrix.md
+python3 scripts/generate_indicators.py --config my_indicators.json --output my_register.md --csv my_register.csv</code></pre>
+                    <p><a href="https://github.com/delschlangen/foresight-scenarios-toolkit/blob/main/scripts/README.md" target="_blank" rel="noopener">Config schema, vocabulary and how templates map to configs &rarr;</a></p>
+                </div>
+            </div>
+        </section>
     </main>
 
     <!-- Scenario Modal -->
-    <div id="scenario-modal" class="modal">
+    <div id="scenario-modal" class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title" aria-hidden="true">
         <div class="modal-content">
-            <button class="modal-close">&times;</button>
+            <button class="modal-close" aria-label="Close scenario details">&times;</button>
             <div class="modal-header">
                 <span class="modal-quadrant"></span>
-                <h2 class="modal-title"></h2>
+                <h2 class="modal-title" id="modal-title"></h2>
                 <p class="modal-tagline"></p>
             </div>
             <div class="modal-body">
                 <div class="modal-section">
                     <h3>Narrative</h3>
-                    <p class="modal-narrative"></p>
+                    <div class="modal-narrative"></div>
                 </div>
                 <div class="modal-section">
                     <h3>Key Features</h3>
@@ -926,7 +1136,7 @@
     <footer class="footer">
         <div class="footer-content">
             <p>Foresight Scenarios Toolkit &mdash; Built by <a href="https://linkedin.com/in/del-s-759557175/" target="_blank">Del Schlangen</a></p>
-            <p><a href="https://github.com/delschlangen/foresight-scenarios-toolkit" target="_blank">View on GitHub</a> &middot; MIT License</p>
+            <p><a href="https://github.com/delschlangen/foresight-scenarios-toolkit" target="_blank">View on GitHub</a> &middot; <a href="https://github.com/delschlangen/foresight-scenarios-toolkit/blob/main/CHANGELOG.md" target="_blank">Changelog</a> &middot; <a href="https://github.com/delschlangen/foresight-scenarios-toolkit/blob/main/CONTRIBUTING.md" target="_blank">Share your scenarios</a> &middot; <a href="https://github.com/delschlangen/foresight-scenarios-toolkit/blob/main/CITATION.cff" target="_blank">Cite</a> &middot; MIT License</p>
         </div>
     </footer>
 

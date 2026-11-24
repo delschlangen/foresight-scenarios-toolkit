@@ -4,6 +4,8 @@
 **Analyst:** [Name]  
 **Focus:** AI Governance Landscape
 
+> **Example:** a completed scan from the toolkit's worked example, kept as written in December 2024 to show the format. Blank form: `templates/weekly_scan_template.md`. How the probability changes at the bottom were derived: `framework/probability_updates.md`.
+
 ---
 
 ## Signal Summary
@@ -34,7 +36,7 @@
 **Scenario implication:**
 - Supports **Incremental** end of capability axis
 - Increases pressure for governance frameworks to address agentic systems
-- Relevant to indicators: I-01 (capability announcements), I-02 (safety posture)
+- Relevant to indicators: I-01 (capability announcements)
 
 **Confidence:** High — Direct observation
 

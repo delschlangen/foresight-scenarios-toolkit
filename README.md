@@ -5,10 +5,32 @@
 [![Try It Live](https://img.shields.io/badge/Try%20It%20Live-Visit%20Site-blue?style=for-the-badge)](https://delschlangen.github.io/foresight-scenarios-toolkit)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg?style=for-the-badge)](LICENSE)
 [![Cite This](https://img.shields.io/badge/Cite-CITATION.cff-orange?style=for-the-badge)](CITATION.cff)
+[![CI](https://github.com/delschlangen/foresight-scenarios-toolkit/actions/workflows/ci.yml/badge.svg)](https://github.com/delschlangen/foresight-scenarios-toolkit/actions/workflows/ci.yml)
 
 > **🚀 [Use this tool live →](https://delschlangen.github.io/foresight-scenarios-toolkit)** — No installation required. Try it in your browser.
 
-A complete **scenario planning toolkit** for strategists, risk managers, and foresight practitioners. Build 2x2 scenario matrices, track leading indicators, stress-test strategies against multiple futures, and translate uncertainty into actionable decisions. Based on Shell's proven foresight methodology.
+A complete **scenario planning toolkit** for strategists, risk managers, and foresight practitioners. Build 2x2 scenario matrices, track leading indicators, stress-test strategies against multiple futures, and translate uncertainty into actionable decisions. Based on Shell's proven foresight methodology, with blank templates, a decision framework, a probability-update worksheet, and two dependency-free scripts.
+
+**New here?** Read the [one-page cheat sheet](CHEATSHEET.md), then follow the [two-hour runbook](guides/runbook.md) from focal question to decisions.
+
+---
+
+## Contents
+
+- [Who This Is For](#who-this-is-for)
+- [What Makes This Different](#what-makes-this-different)
+- [Quick Start](#quick-start)
+- [What's Included](#whats-included)
+- [The Methodology](#the-methodology)
+- [Use Cases](#use-cases)
+- [The AI Governance Example](#the-ai-governance-example)
+- [Adapting for Your Domain](#adapting-for-your-domain)
+- [Operational Rhythm](#operational-rhythm)
+- [Project Structure](#project-structure)
+- [Getting Started](#getting-started)
+- [Contributing and Showcase](#contributing-and-showcase)
+- [Live Demo](#live-demo)
+- [Citation](#citation) · [License](#license)
 
 ---
 
@@ -16,40 +38,45 @@ A complete **scenario planning toolkit** for strategists, risk managers, and for
 
 | You Are | Your Problem | How This Helps |
 |---------|--------------|----------------|
-| **Strategy leader** | Board wants to see we've thought about uncertainty | Structured scenarios with probability tracking |
-| **Risk manager** | Current risk register assumes one future | Stress-test against multiple plausible worlds |
-| **Policy advocate** | Need to argue for different regulatory approaches | Scenario-based framing for stakeholder engagement |
-| **Startup founder** | Betting the company on assumptions about the future | Identify which assumptions matter most |
-| **Foresight practitioner** | Scenarios die in slide decks | Operational system that keeps scenarios alive |
+| **Strategy leader** | Board wants to see we've thought about uncertainty | Structured scenarios with probability tracking and a stress-test table |
+| **Risk manager** | Current risk register assumes one future | Stress-test controls against four plausible worlds |
+| **Policy advocate** | Need to argue for different regulatory approaches | Scenario-based framing with indicator evidence |
+| **Startup founder** | Betting the company on assumptions about the future | Identify which assumptions matter most, and the robust moves |
+| **Foresight practitioner** | Scenarios die in slide decks | An operational system: weekly scans, monthly updates, triggers, playbooks |
 
 ---
 
 ## What Makes This Different
 
-Most scenario planning produces nice documents that gather dust. This toolkit solves that with:
+Most scenario planning produces documents that gather dust. This toolkit is built around the step most methods skip, **connecting scenarios to decisions**, and around the rhythm that keeps them alive:
 
-1. **Decision Framework** — Explicit methods to translate scenarios into strategic choices
-2. **Indicator Tracking** — Early warning system to detect which scenario is emerging
-3. **Contingency Playbooks** — Pre-developed responses so you can move fast
-4. **Weekly Operations** — 30-minute scanning rhythm that keeps scenarios current
-5. **Workshop Guides** — Step-by-step facilitation for running sessions
+1. **Decision Framework** — Stress-test strategy, find robust moves, pre-commit to triggers ([`framework/decisions.md`](framework/decisions.md))
+2. **Contingency Playbooks** — Pre-built responses with trigger conditions ([`framework/contingency.md`](framework/contingency.md))
+3. **Indicator Tracking with Status** — Measurable thresholds and a Watching → Elevated → Fired status so "did it fire?" has an answer ([`framework/indicators.md`](framework/indicators.md))
+4. **Probability Updates You Can Audit** — A worksheet with fixed step sizes and a log, instead of arguing over 32% vs 35% ([`framework/probability_updates.md`](framework/probability_updates.md))
+5. **Workshop and Runbook** — A one-day facilitation guide for teams and a two-hour runbook for one person ([`guides/`](guides/))
+6. **Templates and Scripts** — Blank forms for every stage, and scripts that render your matrix and register from JSON ([`templates/`](templates/), [`scripts/`](scripts/))
 
 ---
 
 ## Quick Start
 
+Requires only a text editor. The two optional scripts need Python 3.8+ and nothing else; they never write files except the ones you name.
+
 ```bash
-# Clone the repo
 git clone https://github.com/delschlangen/foresight-scenarios-toolkit.git
 cd foresight-scenarios-toolkit
 
-# Generate outputs from the AI governance example
-python scripts/generate_matrix.py
-python scripts/generate_indicators.py
+# Render the AI governance example to the terminal
+python3 scripts/generate_matrix.py
+python3 scripts/generate_indicators.py
 
-# See example weekly scan
-cat examples/weekly_scan.md
+# Render your own configs (copy and edit the JSON files in scripts/ first)
+python3 scripts/generate_matrix.py     --config my_scenarios.json  --output my_matrix.md
+python3 scripts/generate_indicators.py --config my_indicators.json --output my_register.md --csv my_register.csv
 ```
+
+Then open [`guides/runbook.md`](guides/runbook.md) and work through the six steps. Schema and vocabulary for the JSON configs: [`scripts/README.md`](scripts/README.md).
 
 ---
 
@@ -57,74 +84,94 @@ cat examples/weekly_scan.md
 
 ### Framework (`framework/`)
 
+The method, and the AI governance worked example carried through every stage.
+
 | Document | Purpose |
 |----------|---------|
-| `method.md` | Four-stage foresight methodology |
-| `drivers.md` | Example: 12 AI governance drivers analyzed |
-| `uncertainties.md` | How to select critical uncertainties |
-| `scenarios.md` | Four complete scenario narratives |
-| `indicators.md` | 10 signals with thresholds and sources |
-| `decisions.md` | **NEW:** How to use scenarios in decision-making |
-| `contingency.md` | **NEW:** Pre-built response playbooks |
+| [`method.md`](framework/method.md) | Five-stage methodology, from focal question to decisions |
+| [`drivers.md`](framework/drivers.md) | Example: 14 drivers across all six STEEP+T categories, scored and prioritized |
+| [`uncertainties.md`](framework/uncertainties.md) | How the two axes were chosen, and which were rejected |
+| [`scenarios.md`](framework/scenarios.md) | Four complete scenario narratives |
+| [`indicators.md`](framework/indicators.md) | Ten indicators with measurable thresholds, a status log, and a monitoring schedule |
+| [`decisions.md`](framework/decisions.md) | Stress-testing, robust moves, decision triggers, decision rules |
+| [`contingency.md`](framework/contingency.md) | Playbook structure, worked playbook, activation checklist |
+| [`probability_updates.md`](framework/probability_updates.md) | Cadence rules and a worksheet for moving probabilities when indicators fire |
 
 ### Guides (`guides/`)
 
 | Guide | Purpose |
 |-------|---------|
-| `adaptation.md` | **NEW:** Step-by-step domain adaptation with worked example |
-| `facilitation.md` | **NEW:** How to run scenario workshops |
+| [`runbook.md`](guides/runbook.md) | The whole method in one sitting: time boxes, templates, commands, checklist |
+| [`facilitation.md`](guides/facilitation.md) | One-day workshop agenda, facilitator scripts, remote adaptations |
+| [`adaptation.md`](guides/adaptation.md) | Applying the method to any domain, with a complete energy-transition example |
+
+### Templates (`templates/`)
+
+Blank forms with `[FILL IN]` placeholders and hints in comments.
+
+| Template | Purpose |
+|----------|---------|
+| [`drivers_template.md`](templates/drivers_template.md) | Driver analysis across STEEP+T; prioritization matrix; axis selection |
+| [`scenario_template.md`](templates/scenario_template.md) | Scenario narratives, comparison matrix, probabilities, quality checklist |
+| [`indicator_template.md`](templates/indicator_template.md) | Indicator register with thresholds, status fields, source library |
+| [`weekly_scan_template.md`](templates/weekly_scan_template.md) | 30-minute horizon scan with source types and action tracking |
+| [`probability_log_template.md`](templates/probability_log_template.md) | Auditable record of probability changes and the indicators behind them |
 
 ### Scripts (`scripts/`)
 
-| Script | Purpose |
-|--------|---------|
-| `generate_matrix.py` | Creates 2x2 matrix from config |
-| `generate_indicators.py` | Creates indicator register from config |
+Standard-library Python. Tested; CI runs the tests on every push.
+
+| File | Purpose |
+|------|---------|
+| [`generate_matrix.py`](scripts/generate_matrix.py) | Renders a 2x2 matrix from JSON; validates that probabilities sum to 100; wraps long names |
+| [`generate_indicators.py`](scripts/generate_indicators.py) | Renders an indicator register and optional CSV; groups by frequency, type, status |
+| [`scenarios_config.json`](scripts/scenarios_config.json), [`indicators_config.json`](scripts/indicators_config.json) | The example configs; copy these to start your own |
+| [`README.md`](scripts/README.md) | JSON schema, accepted vocabulary, writing measurable thresholds, templates-to-config mapping |
 
 ### Examples (`examples/`)
 
 | File | Description |
 |------|-------------|
-| `scenario_matrix.md` | Generated 2x2 with probabilities |
-| `indicator_register.md` | Complete monitoring register |
-| `weekly_scan.md` | Sample horizon scan with 6 signals |
+| [`scenario_matrix.md`](examples/scenario_matrix.md) | Generated 2x2 with probabilities |
+| [`indicator_register.md`](examples/indicator_register.md), [`indicator_register.csv`](examples/indicator_register.csv) | Generated register (Markdown and spreadsheet-ready CSV) |
+| [`weekly_scan.md`](examples/weekly_scan.md) | A completed horizon scan with six signals |
+| [`strategic_options.md`](examples/strategic_options.md) | Eight strategic options scored across four scenarios: robustness, expected value, triggers |
 
-### Templates (`templates/`)
+### Reference
 
-Blank templates with [FILL IN] placeholders and instructions for building your own scenarios:
-
-| Template | Purpose |
-|----------|---------|
-| `drivers_template.md` | Driver analysis form with STEEP+T categories |
-| `scenario_template.md` | Scenario narrative structure with quality checklist |
-| `indicator_template.md` | Indicator definition with source library |
-| `weekly_scan_template.md` | Horizon scan log with action tracking |
+| File | Purpose |
+|------|---------|
+| [`CHEATSHEET.md`](CHEATSHEET.md) | The whole method on one page |
+| [`FAQ.md`](FAQ.md) | Why four scenarios, how to brief a board, what stale looks like, anti-patterns |
+| [`CHANGELOG.md`](CHANGELOG.md) | What changed in each version |
+| [`CONTRIBUTING.md`](CONTRIBUTING.md) | How to share a scenario set, report an inconsistency, or improve the content |
+| [`docs/`](docs/) | The GitHub Pages site: interactive matrix, drivers, indicators, methodology, and a "Use the Toolkit" tab |
 
 ---
 
 ## The Methodology
 
 ```
-DRIVERS → UNCERTAINTIES → SCENARIOS → INDICATORS → DECISIONS
-   ↓            ↓             ↓            ↓            ↓
- 12 forces   2 axes       4 worlds    10 signals   Action
- analyzed    selected     developed   monitored    triggers
+FOCAL QUESTION → DRIVERS → UNCERTAINTIES → SCENARIOS → INDICATORS → DECISIONS
+                    ↓            ↓             ↓            ↓            ↓
+                10-15 forces   2 axes       4 worlds    8-12 signals  Stress-test,
+                scored         selected     developed   with status   robust moves,
+                                                                      triggers
 ```
 
-**Stage 1: Identify Drivers**
-Map 10-15 forces shaping your focal question using STEEP+T framework.
+**Before you start:** write the focal question. *For [organization], what strategy should we pursue regarding [decision area] over [horizon], given uncertainty about [factors]?*
 
-**Stage 2: Select Uncertainties**
-Choose 2 high-impact, high-uncertainty drivers as scenario axes.
+**Stage 1: Identify Drivers** — Map 10-15 forces shaping your focal question using the STEEP+T framework; score each for impact and uncertainty.
 
-**Stage 3: Build Scenarios**
-Develop 4 narrative futures for each quadrant of the 2x2 matrix.
+**Stage 2: Select Uncertainties** — Choose two high-impact, high-uncertainty, *independent* drivers as scenario axes. Frame them as spectra.
 
-**Stage 4: Define Indicators**
-Create early warning signals for each scenario.
+**Stage 3: Build Scenarios** — Develop four narrative futures, one per quadrant. Each has winners and losers. Probabilities sum to 100.
 
-**Stage 5: Connect to Decisions**
-Stress-test strategies, find robust moves, build contingency plans.
+**Stage 4: Define Indicators** — Create 8-12 early-warning signals with thresholds two analysts would agree have been crossed.
+
+**Stage 5: Connect to Decisions** — Stress-test strategy, find robust moves, pre-commit to triggers, build contingency playbooks.
+
+Then run the rhythm: weekly scan, monthly probability update, quarterly scenario review, annual rebuild. Full detail in [`framework/method.md`](framework/method.md); one-page version in [`CHEATSHEET.md`](CHEATSHEET.md).
 
 ---
 
@@ -132,117 +179,87 @@ Stress-test strategies, find robust moves, build contingency plans.
 
 ### Use Case 1: Strategic Planning
 
-**Situation:** Annual strategy refresh, board wants assurance we've considered multiple futures.
+**Situation:** Annual strategy refresh; the board wants assurance that multiple futures were considered.
 
-**How to Use:**
-1. Run workshop using `guides/facilitation.md`
-2. Test current strategy against all 4 scenarios
-3. Identify robust moves that work across scenarios
-4. Build contingency triggers for scenario-specific responses
+**How to Use:** Run a workshop with [`guides/facilitation.md`](guides/facilitation.md). Test current strategy against all four scenarios using the stress-test table in [`framework/decisions.md`](framework/decisions.md). Identify robust moves; set contingency triggers.
 
-**Deliverable:** Strategy document with scenario stress-testing section.
-
----
+**Deliverable:** Strategy document with a scenario stress-test section. See [`examples/strategic_options.md`](examples/strategic_options.md) for the shape of it.
 
 ### Use Case 2: Investment Decision
 
-**Situation:** Major capital allocation decision with 5+ year horizon.
+**Situation:** Major capital allocation with a 5+ year horizon.
 
-**How to Use:**
-1. Define focal question around the investment decision
-2. Build scenarios around key uncertainties
-3. Calculate expected value of investment under each scenario
-4. Set decision triggers: "If scenario X probability exceeds 40%, we [action]"
+**How to Use:** Define the focal question around the decision. Build scenarios around the key uncertainties. Score the options under each scenario and compute probability-weighted and minimum (robustness) values, as in [`examples/strategic_options.md`](examples/strategic_options.md). Set decision triggers: "If scenario X exceeds 40%, we [action]."
 
 **Deliverable:** Investment memo with scenario-weighted analysis.
 
----
-
 ### Use Case 3: Policy Advocacy
 
-**Situation:** Advocating for regulatory approach to emerging technology.
+**Situation:** Advocating for a regulatory approach to an emerging technology.
 
-**How to Use:**
-1. Build scenarios showing different regulatory futures
-2. Identify which scenario aligns with your preferred policy
-3. Develop indicator-based arguments: "Early signs suggest [scenario], which supports [policy]"
-4. Prepare responses for alternative scenarios
+**How to Use:** Build scenarios showing different regulatory futures. Identify which aligns with your preferred policy. Develop indicator-based arguments: "Early signs (I-03, I-05) suggest [scenario], which supports [policy]." Prepare positions for the alternatives.
 
 **Deliverable:** Policy brief with scenario-based framing.
 
----
-
 ### Use Case 4: Risk Management
 
-**Situation:** Enterprise risk register assumes a single future.
+**Situation:** The enterprise risk register assumes a single future.
 
-**How to Use:**
-1. Map current risks to scenario likelihoods
-2. Identify scenario-specific risks not currently tracked
-3. Stress-test controls against each scenario
-4. Add scenario probability to risk weighting
+**How to Use:** Map current risks to scenario likelihoods. Identify scenario-specific risks not currently tracked. Stress-test controls against each scenario. Add scenario probability to risk weighting.
 
 **Deliverable:** Enhanced risk register with scenario overlays.
 
----
-
 ### Use Case 5: Ongoing Horizon Scanning
 
-**Situation:** Leadership wants regular updates on strategic environment.
+**Situation:** Leadership wants regular updates on the strategic environment.
 
-**How to Use:**
-1. Set up indicator monitoring per `indicators.md`
-2. Run weekly 30-minute scans
-3. Update scenario probabilities monthly
-4. Trigger strategic review when thresholds crossed
+**How to Use:** Set up the register from [`templates/indicator_template.md`](templates/indicator_template.md). Run weekly 30-minute scans ([`templates/weekly_scan_template.md`](templates/weekly_scan_template.md)). Move probabilities monthly with the worksheet in [`framework/probability_updates.md`](framework/probability_updates.md). Trigger a strategic review when a threshold is crossed.
 
-**Deliverable:** Weekly scan memo, monthly probability dashboard.
+**Deliverable:** Weekly scan memo, monthly probability log, quarterly dashboard.
 
 ---
 
 ## The AI Governance Example
 
-The included example focuses on AI governance 2024-2030:
+The worked example runs the full method on AI governance, 2024-2030.
+
+> **As of Q4 2024.** The example was authored in late 2024 and is deliberately kept as a dated baseline, so you can see what a complete set looks like and practise the refresh process on it. Every example document carries an explicit status note.
 
 **Focal Question:** How will AI governance evolve, and what does that mean for strategy?
 
-**Axes:**
-- AI Capability: Incremental ↔ Discontinuous
-- Regulation: Fragmented ↔ Harmonized
+**Axes:** AI Capability (Incremental ↔ Discontinuous) and Global Regulation (Fragmented ↔ Harmonized)
 
-**Scenarios:**
-1. **Coordinated Caution** — Orderly governance before capabilities leap
-2. **Emergency Coordination** — Crisis forces cooperation
-3. **Patchwork Progress** — Steady advancement, messy governance
-4. **Fragmented Scramble** — Transformative AI with minimal guardrails
+| Scenario | Quadrant | Baseline probability |
+|----------|----------|----------------------|
+| **Coordinated Caution** | Incremental + Harmonized | 20% |
+| **Emergency Coordination** | Discontinuous + Harmonized | 15% |
+| **Patchwork Progress** | Incremental + Fragmented | 45% |
+| **Fragmented Scramble** | Discontinuous + Fragmented | 20% |
 
-This example is fully worked through all stages, including indicators, weekly scans, and decision implications.
+Fourteen drivers, ten indicators with status, a completed weekly scan, a worked contingency playbook, and a full strategic-options analysis. Explore it interactively on the [live site](https://delschlangen.github.io/foresight-scenarios-toolkit).
 
 ---
 
 ## Adapting for Your Domain
 
-The methodology applies to any strategic foresight need. See `guides/adaptation.md` for step-by-step instructions with a worked example (energy transition).
+The methodology applies to any strategic foresight need. [`guides/adaptation.md`](guides/adaptation.md) gives step-by-step instructions with a second complete worked example (energy transition for an oil and gas company).
 
-**Domains this works for:**
-- Geopolitical risk
-- Technology adoption/disruption
-- Market/competitive dynamics
-- Regulatory landscapes
-- Climate/sustainability futures
-- Supply chain resilience
-- Workforce evolution
+**Domains this works for:** geopolitical risk · technology adoption and disruption · market and competitive dynamics · regulatory landscapes · climate and sustainability futures · supply chain resilience · workforce evolution
+
+Built a set in a new domain? Add it to the [showcase](CONTRIBUTING.md#showcase).
 
 ---
 
 ## Operational Rhythm
 
-| Frequency | Activity | Time | Output |
-|-----------|----------|------|--------|
-| Weekly | Indicator scan | 30 min | Signal log |
-| Monthly | Probability review | 1-2 hrs | Updated probabilities |
-| Quarterly | Deep scenario review | Half day | Narrative updates if needed |
-| Annually | Full reassessment | 1-2 days | Refresh drivers and scenarios |
+| Frequency | Activity | Time | Output | Probabilities |
+|-----------|----------|------|--------|---------------|
+| Weekly | Indicator scan; update indicator status | 30 min | Signal log | Do not move |
+| Monthly | Probability worksheet; check triggers | 1-2 hrs | Probability log entry | Move, with step sizes |
+| Quarterly | Deep scenario review; playbook maintenance | Half day | Narrative updates if needed | Re-baseline if the set changes |
+| Annually | Full reassessment of drivers and axes | 1-2 days | Refreshed scenario set | New baseline |
+
+Why the weekly scan does not move probabilities, and how the monthly review does: [`framework/probability_updates.md`](framework/probability_updates.md).
 
 ---
 
@@ -250,60 +267,73 @@ The methodology applies to any strategic foresight need. See `guides/adaptation.
 
 ```
 foresight-scenarios-toolkit/
+├── README.md                   # This file
+├── CHEATSHEET.md               # One-page quick reference
+├── FAQ.md                      # Questions and anti-patterns
+├── CHANGELOG.md
+├── CONTRIBUTING.md             # Including the showcase of adapted scenario sets
+├── CITATION.cff
+├── LICENSE
 ├── framework/
-│   ├── method.md           # Core methodology
-│   ├── drivers.md          # Driver analysis example
-│   ├── uncertainties.md    # Uncertainty selection
-│   ├── scenarios.md        # Four scenario narratives
-│   ├── indicators.md       # Indicator register
-│   ├── decisions.md        # Decision framework
-│   └── contingency.md      # Contingency playbooks
+│   ├── method.md               # Five-stage methodology
+│   ├── drivers.md              # Example: 14 drivers
+│   ├── uncertainties.md        # Example: axis selection
+│   ├── scenarios.md            # Example: four narratives
+│   ├── indicators.md           # Example: register with status log
+│   ├── decisions.md            # Decision framework
+│   ├── contingency.md          # Contingency playbooks
+│   └── probability_updates.md  # Probability update worksheet
 ├── guides/
-│   ├── adaptation.md       # Domain adaptation
-│   └── facilitation.md     # Workshop guide
+│   ├── runbook.md              # End-to-end in one sitting
+│   ├── facilitation.md         # Workshop guide
+│   └── adaptation.md           # Domain adaptation + energy example
 ├── templates/
-│   ├── drivers_template.md     # Blank driver analysis
-│   ├── scenario_template.md    # Blank scenario structure
-│   ├── indicator_template.md   # Blank indicator register
-│   └── weekly_scan_template.md # Blank scan log
+│   ├── drivers_template.md
+│   ├── scenario_template.md
+│   ├── indicator_template.md
+│   ├── weekly_scan_template.md
+│   └── probability_log_template.md
 ├── scripts/
+│   ├── README.md               # Config schema and vocabulary
 │   ├── generate_matrix.py
 │   ├── generate_indicators.py
 │   ├── scenarios_config.json
-│   └── indicators_config.json
+│   ├── indicators_config.json
+│   └── test_generators.py      # Generator and consistency tests
 ├── examples/
-│   ├── scenario_matrix.md
-│   ├── indicator_register.md
-│   └── weekly_scan.md
-├── README.md
-└── LICENSE
+│   ├── scenario_matrix.md      # Generated
+│   ├── indicator_register.md   # Generated
+│   ├── indicator_register.csv  # Generated
+│   ├── weekly_scan.md
+│   └── strategic_options.md
+├── docs/                       # GitHub Pages site
+│   ├── index.html
+│   ├── styles.css
+│   └── app.js
+└── .github/
+    ├── workflows/ci.yml
+    └── ISSUE_TEMPLATE/
 ```
 
 ---
 
 ## Getting Started
 
-**Option A: Learn the methodology**
-1. Read `framework/method.md` for the four-stage process
-2. Study the AI governance example across `framework/*.md`
-3. Review `framework/decisions.md` for the action framework
+**Fastest path: the runbook.** [`guides/runbook.md`](guides/runbook.md) takes you from focal question to a first stress-test in about two hours, pointing at the right template and command at each step.
 
-**Option B: Run a workshop**
-1. Start with `guides/facilitation.md`
-2. Adapt the agenda for your context
-3. Use `guides/adaptation.md` for non-AI domains
+**Option A: Learn the methodology.** Read [`framework/method.md`](framework/method.md), then follow the AI governance example across `framework/*.md`, finishing with [`framework/decisions.md`](framework/decisions.md) and [`examples/strategic_options.md`](examples/strategic_options.md).
 
-**Option C: Set up ongoing scanning**
-1. Define your scenarios (or use/adapt the example)
-2. Configure indicators in `scripts/indicators_config.json`
-3. Run `python scripts/generate_indicators.py`
-4. Establish weekly scanning rhythm
+**Option B: Run a workshop.** Start with [`guides/facilitation.md`](guides/facilitation.md); use [`guides/adaptation.md`](guides/adaptation.md) for non-AI domains.
 
-**Option D: Build from templates**
-1. Copy templates from `templates/` to your working directory
-2. Fill in [FILL IN] placeholders with your domain content
-3. Use hints and instructions embedded in each template
-4. Reference `framework/` examples for guidance
+**Option C: Set up ongoing scanning.** Define your indicators in a copy of [`scripts/indicators_config.json`](scripts/indicators_config.json), render the register with `generate_indicators.py --config`, and start the weekly rhythm with [`templates/weekly_scan_template.md`](templates/weekly_scan_template.md).
+
+**Option D: Build from templates.** Copy the files in [`templates/`](templates/) to your working directory and fill in the placeholders; each template ends with a "Next Step" pointing to the following one.
+
+---
+
+## Contributing and Showcase
+
+The most useful contribution is evidence the method works somewhere new. If you built a scenario set with this toolkit, open an issue with the **Share a scenario set** template and it will be listed in the [showcase](CONTRIBUTING.md#showcase). Inconsistencies, fixes, and new worked examples are welcome too; see [`CONTRIBUTING.md`](CONTRIBUTING.md).
 
 ---
 
@@ -329,11 +359,12 @@ No installation or dependencies required.
 If you use this toolkit in your research or work, please cite it:
 
 ```bibtex
-@software{schlangen2024foresight,
-  author = {Schlangen, Del},
-  title = {Foresight Scenarios Toolkit},
-  year = {2024},
-  url = {https://github.com/delschlangen/foresight-scenarios-toolkit}
+@software{schlangen2025foresight,
+  author  = {Schlangen, Del},
+  title   = {Foresight Scenarios Toolkit},
+  year    = {2025},
+  version = {1.2.0},
+  url     = {https://github.com/delschlangen/foresight-scenarios-toolkit}
 }
 ```
 
