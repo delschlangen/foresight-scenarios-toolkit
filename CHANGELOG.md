@@ -2,6 +2,14 @@
 
 All notable changes to this toolkit. Format follows [Keep a Changelog](https://keepachangelog.com/); versions follow [Semantic Versioning](https://semver.org/) loosely (major = method changes, minor = new content or features, patch = fixes).
 
+## [Unreleased]
+
+### Added
+- Zenodo archiving. Concept DOI [10.5281/zenodo.24618195](https://doi.org/10.5281/zenodo.24618195) added to `CITATION.cff`, the README badges and the BibTeX entry. Every GitHub release from v1.2.0 onward is archived automatically and gets its own version DOI.
+
+### Changed
+- CI matrix tests Python 3.12 and the runner's newest 3.x (3.9 is no longer available on `ubuntu-latest`).
+
 ## [1.2.0] - 2026-11-24
 
 ### Added
