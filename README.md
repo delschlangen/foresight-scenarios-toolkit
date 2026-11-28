@@ -5,6 +5,7 @@
 [![Try It Live](https://img.shields.io/badge/Try%20It%20Live-Visit%20Site-blue?style=for-the-badge)](https://delschlangen.github.io/foresight-scenarios-toolkit)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg?style=for-the-badge)](LICENSE)
 [![Cite This](https://img.shields.io/badge/Cite-CITATION.cff-orange?style=for-the-badge)](CITATION.cff)
+[![DOI](https://img.shields.io/badge/DOI-10.5281%2Fzenodo.24618195-1682D4?style=for-the-badge)](https://doi.org/10.5281/zenodo.24618195)
 [![CI](https://github.com/delschlangen/foresight-scenarios-toolkit/actions/workflows/ci.yml/badge.svg)](https://github.com/delschlangen/foresight-scenarios-toolkit/actions/workflows/ci.yml)
 
 > **🚀 [Use this tool live →](https://delschlangen.github.io/foresight-scenarios-toolkit)** — No installation required. Try it in your browser.
@@ -356,19 +357,23 @@ No installation or dependencies required.
 
 ## Citation
 
-If you use this toolkit in your research or work, please cite it:
+Every release is archived on Zenodo. The DOI below is the concept DOI and always resolves to the latest release; each release also has its own version DOI on the [Zenodo record](https://doi.org/10.5281/zenodo.24618195).
+
+> Schlangen, D. (2025). *Foresight Scenarios Toolkit* (v1.2.0). Zenodo. https://doi.org/10.5281/zenodo.24618195
 
 ```bibtex
 @software{schlangen2025foresight,
-  author  = {Schlangen, Del},
-  title   = {Foresight Scenarios Toolkit},
-  year    = {2025},
-  version = {1.2.0},
-  url     = {https://github.com/delschlangen/foresight-scenarios-toolkit}
+  author    = {Schlangen, Del},
+  title     = {Foresight Scenarios Toolkit},
+  year      = {2025},
+  version   = {1.2.0},
+  publisher = {Zenodo},
+  doi       = {10.5281/zenodo.24618195},
+  url       = {https://doi.org/10.5281/zenodo.24618195}
 }
 ```
 
-See [CITATION.cff](CITATION.cff) for full citation metadata.
+See [CITATION.cff](CITATION.cff) for full citation metadata; GitHub's "Cite this repository" button reads from it.
 
 ---
 

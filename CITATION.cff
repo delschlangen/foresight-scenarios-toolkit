@@ -13,6 +13,11 @@ authors:
     orcid: "https://orcid.org/0009-0005-5116-9564"
 repository-code: "https://github.com/delschlangen/foresight-scenarios-toolkit"
 url: "https://delschlangen.github.io/foresight-scenarios-toolkit"
+doi: 10.5281/zenodo.24618195
+identifiers:
+  - type: doi
+    value: 10.5281/zenodo.24618195
+    description: "Concept DOI: resolves to the latest archived release on Zenodo"
 license: MIT
 keywords:
   - scenario planning
